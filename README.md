@@ -58,8 +58,8 @@ brew help
 
 > Software not found in this list can be viewed in the list below.
 >
-> [![Click to View List for Chinese](https://img.shields.io/badge/List_for_Chinese-red?style=for-the-badge&logo=homebrew&label=Click%20to%20view)](https://github.com/Brewforge/homebrew-chinese/blob/main/REAMDE.md)
-> [![Click to View List for CLI](https://img.shields.io/badge/List_for_Global-red?style=for-the-badge&logo=homebrew&label=Click%20to%20view)](https://github.com/Brewforge/homebrew-extras/blob/main/REAMDE.md)
+> [![Click to View List for Chinese](https://img.shields.io/badge/List_for_Chinese-red?style=for-the-badge&logo=homebrew&label=Click%20to%20view)](https://github.com/Brewforge/homebrew-chinese)
+> [![Click to View List for CLI](https://img.shields.io/badge/List_for_Global-red?style=for-the-badge&logo=homebrew&label=Click%20to%20view)](https://github.com/Brewforge/homebrew-extras)
 
 | Formula Name  |                      Site                      |                 Note                 |
 | :-----------: | :--------------------------------------------: | :----------------------------------: |
@@ -84,3 +84,8 @@ brew help
 Please directly initiate a [pull request](https://github.com/Brewforge/homebrew-more/compare) or [issue](https://github.com/Brewforge/homebrew-more/issues/new/choose).
 
 <!-- ## ❤️ Sponsors -->
+
+> Software not found in this list can be viewed in the list below.
+>
+> [![Click to View List for Chinese](https://img.shields.io/badge/List_for_Chinese-red?style=for-the-badge&logo=homebrew&label=Click%20to%20view)](https://github.com/Brewforge/homebrew-chinese)
+> [![Click to View List for CLI](https://img.shields.io/badge/List_for_Global-red?style=for-the-badge&logo=homebrew&label=Click%20to%20view)](https://github.com/Brewforge/homebrew-extras)
