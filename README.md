@@ -6,17 +6,9 @@ More [Homebrew](https://github.com/Homebrew/brew) 🍺 Formulae Not Included in 
 
 👏 Welcome discussion on [Discussions](https://github.com/orgs/Brewforge/discussions). 🎙️
 
-## 📝 TL;DR
+## 🍺 Get Started
 
-📦 List of Entries
-
-<div style="text-align: center;">
-  <a href="list.md" style="margin: 0 10px;">
-    <img src="https://img.shields.io/badge/List-blue?style=for-the-badge&logo=homebrew&label=Click%20to%20view" alt="List">
-  </a>
-</div>
-
-## 🏃 Get Started
+### 🏃 Get Prepared
 
 ```sh
 /bin/zsh -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
@@ -24,7 +16,7 @@ More [Homebrew](https://github.com/Homebrew/brew) 🍺 Formulae Not Included in 
 
 For more details, check [Homebrew official site](https://brew.sh/).
 
-## 🍺 User Guide
+### 🚀 Use it
 
 🚰 `Tap` this repo at the 1st time
 
@@ -61,6 +53,27 @@ brew ls
 ```sh
 brew help
 ```
+
+## 📝 List
+
+> Software not found in this list can be viewed in the list below.
+>
+> [![Click to View List for Chinese](https://img.shields.io/badge/List_for_Chinese-red?style=for-the-badge&logo=homebrew&label=Click%20to%20view)](https://github.com/Brewforge/homebrew-chinese/blob/main/REAMDE.md)
+> [![Click to View List for CLI](https://img.shields.io/badge/List_for_Global-red?style=for-the-badge&logo=homebrew&label=Click%20to%20view)](https://github.com/Brewforge/homebrew-extras/blob/main/REAMDE.md)
+
+| Formula Name  |                      Site                      |                 Note                 |
+| :-----------: | :--------------------------------------------: | :----------------------------------: |
+|    `alist`    |        [AList](https://alist.nn.ci/zh)         | ![a](assets/a.svg)![1](assets/1.svg) |
+|   `bbdown`    |  [BBDOWN](https://github.com/nilaoda/BBDown)   | ![a](assets/a.svg)![1](assets/1.svg) |
+|   `makemf`    |   [MakeMF](https://github.com/Mrered/Gobin)    | ![a](assets/a.svg)![1](assets/1.svg) |
+| `nezha-agent` |       [Nezha Agent](https://nezha.wiki)        | ![a](assets/a.svg)![1](assets/1.svg) |
+| `ollamaplist` | [OllamaPlist](https://github.com/Mrered/Gobin) | ![a](assets/a.svg)![1](assets/1.svg) |
+|    `shurl`    |   [ShURL](https://github.com/Mrered/yourlsh)   | ![a](assets/a.svg)![1](assets/1.svg) |
+
+> Software not found in this list can be viewed in the list below.
+>
+> [![Click to View List for Chinese](https://img.shields.io/badge/List_for_Chinese-red?style=for-the-badge&logo=homebrew&label=Click%20to%20view)](https://github.com/Brewforge/homebrew-chinese/blob/main/%E5%88%97%E8%A1%A8.md)
+> [![Click to View List for CLI](https://img.shields.io/badge/List_for_Global-red?style=for-the-badge&logo=homebrew&label=Click%20to%20view)](https://github.com/Brewforge/homebrew-extras/blob/main/list.md)
 
 ## 🌟 STAR ME
 
