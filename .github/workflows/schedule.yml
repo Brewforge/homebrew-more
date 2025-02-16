@@ -1,0 +1,129 @@
+name: schedule
+
+on:
+  # pull_request:
+  #   branches: [main]
+  # push:
+  #   branches: [fix-*]
+  schedule:
+    # Every 12 hours
+    # - cron: "20 */12 * * *"
+    # Every day at 6am
+    - cron: "0 6 * * *"
+  # allow run manually
+  workflow_dispatch:
+
+concurrency:
+  group: ${{ github.head_ref || github.ref_name }}
+
+permissions: write-all
+
+env:
+  HOMEBREW_DEVELOPER: 1
+  HOMEBREW_GITHUB_ACTIONS: 1
+  HOMEBREW_NO_AUTO_UPDATE: 1
+  HOMEBREW_NO_INSTALL_FROM_API: 1
+  HOMEBREW_RELOCATABLE_INSTALL_NAMES: 1
+
+jobs:
+  tap-syntax:
+    if: "!contains(github.event.head_commit.message, 'skip-build')"
+    runs-on: ubuntu-22.04
+    container:
+      image: ghcr.io/homebrew/ubuntu22.04:master
+    env:
+      HOMEBREW_SIMULATE_MACOS_ON_LINUX: 1
+    outputs:
+      testing_formulae: ${{ steps.formulae-detect.outputs.testing_formulae }}
+      added_formulae: ${{ steps.formulae-detect.outputs.added_formulae }}
+      deleted_formulae: ${{ steps.formulae-detect.outputs.deleted_formulae }}
+    steps:
+      - name: Set up Homebrew
+        id: set-up-homebrew
+        uses: Homebrew/actions/setup-homebrew@master
+        with:
+          core: true
+          cask: false
+          test-bot: true
+
+      - run: brew test-bot --only-tap-syntax
+
+      - run: brew test-bot --only-formulae-detect
+        if: github.event_name == 'pull_request'
+        id: formulae-detect
+
+  bump-formulae:
+    name: Bump formulae
+    if: github.repository == 'brewforge/homebrew-more'
+    runs-on: ${{ matrix.os }}
+
+    strategy:
+      matrix:
+        os: [macos-latest]
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Homebrew
+        id: set-up-homebrew
+        uses: Homebrew/actions/setup-homebrew@master
+        with:
+          core: false
+          cask: false
+          test-bot: false
+
+      - name: Brew Tap
+        uses: ./.github/actions/brew-tap
+
+      - name: Git Cred
+        uses: ./.github/actions/git-cred
+        with:
+          HOMEBREW_GITHUB_API_TOKEN: ${{ secrets.HOMEBREW_GITHUB_API_TOKEN }}
+
+      - name: Bump
+        env:
+          HOMEBREW_DEVELOPER: "1"
+          HOMEBREW_GITHUB_API_TOKEN: ${{ secrets.HOMEBREW_GITHUB_API_TOKEN }}
+        shell: bash -ieo pipefail {0}
+        run: |
+          rsync -lrv --exclude=.git "$(pwd)" "$(brew --repository brewforge/more)"
+          cd "$(brew --repository brewforge/more)"
+          ./.github/actions/bump-formulae/script.sh
+
+  bump-formulae-linux:
+    name: Bump formulae (Linuxbrew)
+    if: github.repository == 'brewforge/homebrew-more'
+    runs-on: ${{ matrix.os }}
+
+    strategy:
+      matrix:
+        os: [ubuntu-latest]
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Homebrew
+        id: set-up-homebrew
+        uses: Homebrew/actions/setup-homebrew@master
+        with:
+          core: false
+          cask: false
+          test-bot: false
+
+      - name: Brew Tap
+        uses: ./.github/actions/brew-tap
+
+      - name: Git Cred
+        uses: ./.github/actions/git-cred
+        with:
+          HOMEBREW_GITHUB_API_TOKEN: ${{ secrets.HOMEBREW_GITHUB_API_TOKEN }}
+
+      - name: Bump
+        env:
+          HOMEBREW_DEVELOPER: "1"
+          HOMEBREW_GITHUB_API_TOKEN: ${{ secrets.HOMEBREW_GITHUB_API_TOKEN }}
+        shell: bash -ieo pipefail {0}
+        run: |
+          rsync -lrv --exclude=.git "$(pwd)" "$(brew --repository brewforge/more)"
+          cd "$(brew --repository brewforge/more)"
+          ./.github/actions/bump-formulae/script.sh
