@@ -1,4 +1,4 @@
-# Homebrew-more
+# Homebrew-More
 
 ![Homebrew](https://img.shields.io/badge/-Homebrew-FBB040?labelColor=555555&logoColor=FFFFFF&logo=homebrew) ![CI](https://github.com/Brewforge/homebrew-more/actions/workflows/schedule.yml/badge.svg) ![license](https://img.shields.io/github/license/Brewforge/homebrew-more) ![code-size](https://img.shields.io/github/languages/code-size/Brewforge/homebrew-more) ![repo-size](https://img.shields.io/github/repo-size/Brewforge/homebrew-more)
 
