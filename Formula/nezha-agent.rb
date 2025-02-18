@@ -19,8 +19,8 @@ class NezhaAgent < Formula
   end
 
   service do
-    run [opt_bin/"nezha-agent", "--password", (ENV["HOMEBREW_NEZHA_AGENT_PASSWORD"]).to_s, "--server",
-         (ENV["HOMEBREW_NEZHA_AGENT_SERVER"]).to_s]
+    run [opt_bin/"nezha-agent", "--password", ENV["HOMEBREW_NEZHA_AGENT_PASSWORD"].to_s, "--server",
+         ENV["HOMEBREW_NEZHA_AGENT_SERVER"].to_s]
     keep_alive true
     environment_variables({
       HOMEBREW_NEZHA_AGENT_PASSWORD: ENV["HOMEBREW_NEZHA_AGENT_PASSWORD"],
