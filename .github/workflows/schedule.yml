@@ -91,7 +91,7 @@ jobs:
           ./.github/actions/bump-formulae/script.sh
 
   bump-formulae-linux:
-    name: Bump formulae (Linuxbrew)
+    name: Bump formulae
     if: github.repository == 'brewforge/homebrew-more'
     runs-on: ${{ matrix.os }}
 
