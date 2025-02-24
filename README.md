@@ -67,6 +67,7 @@ brew help
 |        `bbdown`        |               [BBDown](https://github.com/nilaoda/BBDown)               | ![a](assets/a.svg)![1](assets/1.svg) |
 | `excalidraw-converter` | [Excalidraw-Converter](https://github.com/sindrel/excalidraw-converter) | ![a](assets/a.svg)![1](assets/1.svg) |
 |        `makemf`        |                [MakeMF](https://github.com/Mrered/Gobin)                | ![a](assets/a.svg)![1](assets/1.svg) |
+|         `mado`         |                 [mado](https://github.com/akiomik/mado)                 | ![a](assets/a.svg)![1](assets/1.svg) |
 |     `nezha-agent`      |                    [Nezha Agent](https://nezha.wiki)                    | ![a](assets/a.svg)![1](assets/1.svg) |
 |     `ollamaplist`      |             [OllamaPlist](https://github.com/Mrered/Gobin)              | ![a](assets/a.svg)![1](assets/1.svg) |
 |        `shurl`         |               [ShURL](https://github.com/Mrered/yourlsh)                | ![a](assets/a.svg)![1](assets/1.svg) |
