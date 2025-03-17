@@ -63,11 +63,10 @@ brew help
 
 |      Formula Name      |                                  Site                                   | Language |                 Note                 |
 | :--------------------: | :---------------------------------------------------------------------: | :------: | :----------------------------------: |
-|        `alist`         |                     [AList](https://alist.nn.ci/zh)                     |    Go    | ![a](assets/a.svg)![1](assets/1.svg) |
+|      `alist-cli`       |                     [AList](https://alist.nn.ci/zh)                     |    Go    | ![a](assets/a.svg)![1](assets/1.svg) |
 |        `bbdown`        |               [BBDown](https://github.com/nilaoda/BBDown)               |    C#    | ![a](assets/a.svg)![1](assets/1.svg) |
 | `excalidraw-converter` | [Excalidraw-Converter](https://github.com/sindrel/excalidraw-converter) |    Go    | ![a](assets/a.svg)![1](assets/1.svg) |
 |        `makemf`        |                [MakeMF](https://github.com/Mrered/Gobin)                |    Go    | ![a](assets/a.svg)![1](assets/1.svg) |
-|         `mado`         |                 [mado](https://github.com/akiomik/mado)                 |   Rust   | ![a](assets/a.svg)![1](assets/1.svg) |
 |     `nezha-agent`      |             [Nezha Agent](https://github.com/nezhahq/agent)             |    Go    | ![a](assets/a.svg)![1](assets/1.svg) |
 |     `ollamaplist`      |             [OllamaPlist](https://github.com/Mrered/Gobin)              |    Go    | ![a](assets/a.svg)![1](assets/1.svg) |
 |        `shurl`         |               [ShURL](https://github.com/Mrered/yourlsh)                |  Shell   | ![a](assets/a.svg)![1](assets/1.svg) |

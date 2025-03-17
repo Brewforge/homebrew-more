@@ -1,4 +1,4 @@
-cask "alist" do
+cask "alist-cli" do
   arch arm: "arm64", intel: "amd64"
 
   os macos: "darwin", linux: "linux"
@@ -20,30 +20,23 @@ cask "alist" do
     strategy :github_latest
   end
 
-  binary "alist-#{os}-#{arch}", target: "alist"
+  binary "alist"
   service do
     run [opt_bin/"alist", "server"]
-    working_dir opt_prefix
+    working_dir bin
     keep_alive true
-  end
-
-  postflight do
-    (var/"log/alist").mkpath
-    (etc/"alist").mkpath
-    prefix.install_symlink etc/"alist" => opt_prefix/"data"
-    ln_s var/"log/alist", opt_prefix/"data/log"
   end
 
   def caveats
     <<~EOS
       To reveal alist admin user's info in default `config.json` again, run the following command:
-        cd #{opt_prefix} && alist admin
+        cd #{bin} && alist admin
       Or reveal `admin` password via `sqlite3` command (before v3.25.1):
         sqlite3 #{etc}/alist/data.db "select password from x_users where username = 'admin'"
       Or reset `admin` password:
-        cd #{opt_prefix} && alist admin random
+        cd #{bin} && alist admin random
       Or set new `admin` password:
-        cd #{opt_prefix} && alist admin set NEW_PASSWORD
+        cd #{bin} && alist admin set NEW_PASSWORD
     EOS
   end
 end
