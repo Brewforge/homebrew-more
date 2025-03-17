@@ -61,12 +61,13 @@ brew help
 > [![Click to View List for Chinese](https://img.shields.io/badge/List_for_Chinese-red?style=for-the-badge&logo=homebrew&label=Click%20to%20view)](https://github.com/Brewforge/homebrew-chinese)
 > [![Click to View List for CLI](https://img.shields.io/badge/List_for_Global-red?style=for-the-badge&logo=homebrew&label=Click%20to%20view)](https://github.com/Brewforge/homebrew-extras)
 
-| Formula Name  |                      Site                      | Language |                 Note                 |
-| :-----------: | :--------------------------------------------: | :------: | :----------------------------------: |
-|   `makemf`    |   [MakeMF](https://github.com/Mrered/Gobin)    |    Go    | ![a](assets/a.svg)![1](assets/1.svg) |
-| `ollamaplist` | [OllamaPlist](https://github.com/Mrered/Gobin) |    Go    | ![a](assets/a.svg)![1](assets/1.svg) |
-|  `reportgen`  |  [reportgen](https://github.com/Mrered/Gobin)  |    Go    | ![a](assets/a.svg)![1](assets/1.svg) |
-|    `shurl`    |   [ShURL](https://github.com/Mrered/yourlsh)   |  Shell   | ![a](assets/a.svg)![1](assets/1.svg) |
+|      Formula Name      |                                  Site                                   | Language |                 Note                 |
+| :--------------------: | :---------------------------------------------------------------------: | :------: | :----------------------------------: |
+| `excalidraw-converter` | [Excalidraw-Converter](https://github.com/sindrel/excalidraw-converter) |    Go    | ![a](assets/a.svg)![1](assets/1.svg) |
+|        `makemf`        |                [MakeMF](https://github.com/Mrered/Gobin)                |    Go    | ![a](assets/a.svg)![1](assets/1.svg) |
+|     `ollamaplist`      |             [OllamaPlist](https://github.com/Mrered/Gobin)              |    Go    | ![a](assets/a.svg)![1](assets/1.svg) |
+|      `reportgen`       |              [reportgen](https://github.com/Mrered/Gobin)               |    Go    | ![a](assets/a.svg)![1](assets/1.svg) |
+|        `shurl`         |               [ShURL](https://github.com/Mrered/yourlsh)                |  Shell   | ![a](assets/a.svg)![1](assets/1.svg) |
 
 ## 🌟 STAR ME
 
