@@ -2,7 +2,7 @@
 
 ![Homebrew](https://img.shields.io/badge/-Homebrew-FBB040?labelColor=555555&logoColor=FFFFFF&logo=homebrew) ![CI](https://github.com/Brewforge/homebrew-more/actions/workflows/schedule.yml/badge.svg) ![license](https://img.shields.io/github/license/Brewforge/homebrew-more) ![code-size](https://img.shields.io/github/languages/code-size/Brewforge/homebrew-more) ![repo-size](https://img.shields.io/github/repo-size/Brewforge/homebrew-more)
 
-More [Homebrew](https://github.com/Homebrew/brew) 🍺 Formulae Not Included in the Official Tap.
+More [Homebrew](https://github.com/Homebrew/brew) 🍺 CLI Not Included in the Official Tap.
 
 👏 Welcome discussion on [Discussions](https://github.com/orgs/Brewforge/discussions). 🎙️
 
@@ -61,12 +61,24 @@ brew help
 > [![Click to View List for Chinese](https://img.shields.io/badge/List_for_Chinese-red?style=for-the-badge&logo=homebrew&label=Click%20to%20view)](https://github.com/Brewforge/homebrew-chinese)
 > [![Click to View List for CLI](https://img.shields.io/badge/List_for_Global-red?style=for-the-badge&logo=homebrew&label=Click%20to%20view)](https://github.com/Brewforge/homebrew-extras)
 
+### Formulae
+
 | Formula Name  |                      Site                      | Language |                 Note                 |
 | :-----------: | :--------------------------------------------: | :------: | :----------------------------------: |
 |   `makemf`    |   [MakeMF](https://github.com/Mrered/Gobin)    |    Go    | ![a](assets/a.svg)![1](assets/1.svg) |
 | `ollamaplist` | [OllamaPlist](https://github.com/Mrered/Gobin) |    Go    | ![a](assets/a.svg)![1](assets/1.svg) |
 |  `reportgen`  |  [reportgen](https://github.com/Mrered/Gobin)  |    Go    | ![a](assets/a.svg)![1](assets/1.svg) |
 |    `shurl`    |   [ShURL](https://github.com/Mrered/yourlsh)   |  Shell   | ![a](assets/a.svg)![1](assets/1.svg) |
+
+### Casks
+
+|   Cask Name   |                        Site                         | Language |                 Note                 |
+| :-----------: | :-------------------------------------------------: | :------: | :----------------------------------: |
+|    `alist`    |           [AList](https://alist.nn.ci/zh)           |    Go    | ![a](assets/a.svg)![1](assets/1.svg) |
+|   `bbdown`    |     [BBDown](https://github.com/nilaoda/BBDown)     |    C#    | ![a](assets/a.svg)![1](assets/1.svg) |
+|  `json-tui`   | [AList](https://github.com/ArthurSonzogni/json-tui) |   C++    | ![a](assets/a.svg)![1](assets/1.svg) |
+| `nezha-agent` |  [哪吒监控服务](https://github.com/nezhahq/agent)   |    Go    | ![a](assets/a.svg)![1](assets/1.svg) |
+|   `shiroa`    | [shiroa](https://github.com/Myriad-Dreamin/shiroa)  |   Rust   | ![a](assets/a.svg)![1](assets/1.svg) |
 
 ## 🌟 STAR ME
 
