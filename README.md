@@ -79,6 +79,7 @@ brew help
 |  `json-tui`   | [AList](https://github.com/ArthurSonzogni/json-tui) |   C++    | ![a](assets/a.svg)![1](assets/1.svg) |
 | `nezha-agent` |  [哪吒监控服务](https://github.com/nezhahq/agent)   |    Go    | ![a](assets/a.svg)![1](assets/1.svg) |
 |   `shiroa`    | [shiroa](https://github.com/Myriad-Dreamin/shiroa)  |   Rust   | ![a](assets/a.svg)![1](assets/1.svg) |
+|   `ticker`    | [ticker](https://github.com/achannarasappa/ticker)  |    Go    | ![a](assets/a.svg)![1](assets/1.svg) |
 
 ## 🌟 STAR ME
 
