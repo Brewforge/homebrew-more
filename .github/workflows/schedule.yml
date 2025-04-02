@@ -9,7 +9,7 @@ on:
     # Every 12 hours
     # - cron: "20 */12 * * *"
     # Every day at 6am
-    - cron: "0 6 * * *"
+    - cron: '0 6 * * *'
   # allow run manually
   workflow_dispatch:
 
@@ -52,8 +52,8 @@ jobs:
         if: github.event_name == 'pull_request'
         id: formulae-detect
 
-  bump-formulae:
-    name: Bump formulae
+  bump-cli:
+    name: Bump cli
     if: github.repository == 'brewforge/homebrew-more'
     runs-on: ${{ matrix.os }}
 
@@ -82,12 +82,11 @@ jobs:
 
       - name: Bump
         env:
-          HOMEBREW_DEVELOPER: "1"
+          HOMEBREW_DEVELOPER: '1'
           HOMEBREW_GITHUB_API_TOKEN: ${{ secrets.HOMEBREW_GITHUB_API_TOKEN }}
         shell: bash -ieo pipefail {0}
         run: |
           rsync -lrv --exclude=.git "$(pwd)" "$(brew --repository brewforge/more)"
           cd "$(brew --repository brewforge/more)"
-          ./.github/actions/bump-formulae/script.sh
           ./.github/actions/bump-casks/script.sh
-
+          ./.github/actions/bump-formulae/script.sh
