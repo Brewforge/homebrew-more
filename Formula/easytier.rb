@@ -11,6 +11,14 @@ class Easytier < Formula
     bin.install "easytier-web"
   end
 
+  service do
+    run [opt_bin/"easytier-core", "-c", "~/.config/easytier/config.yaml"]
+    keep_alive true
+    working_dir var
+    log_path var/"log/easytier.log"
+    error_log_path var/"log/easytier.log"
+  end
+
   test do
     system bin/"easytier-core", "-h"
     system bin/"easytier-cli", "-h"
