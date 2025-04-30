@@ -63,24 +63,24 @@ brew help
 
 ### Formulae
 
-| Formula Name  |                      Site                      | Language |                 Note                 |
-| :-----------: | :--------------------------------------------: | :------: | :----------------------------------: |
-|   `makemf`    |   [MakeMF](https://github.com/Mrered/Gobin)    |    Go    | ![a](assets/a.svg)![1](assets/1.svg) |
-| `ollamaplist` | [OllamaPlist](https://github.com/Mrered/Gobin) |    Go    | ![a](assets/a.svg)![1](assets/1.svg) |
-|  `reportgen`  |  [reportgen](https://github.com/Mrered/Gobin)  |    Go    | ![a](assets/a.svg)![1](assets/1.svg) |
-|    `shurl`    |   [ShURL](https://github.com/Mrered/yourlsh)   |  Shell   | ![a](assets/a.svg)![1](assets/1.svg) |
+| Formula Name  |                       Site                       | Language |                 Note                 |
+| :-----------: | :----------------------------------------------: | :------: | :----------------------------------: |
+|  `easytier`   |         [EasyTier](https://easytier.cn/)         |   Rust   | ![a](assets/a.svg)![1](assets/1.svg) |
+|   `makemf`    |    [MakeMF](https://github.com/Mrered/Gobin)     |    Go    | ![a](assets/a.svg)![1](assets/1.svg) |
+| `nezha-agent` | [哪吒监控服务](https://github.com/nezhahq/agent) |    Go    | ![a](assets/a.svg)![1](assets/1.svg) |
+| `ollamaplist` |  [OllamaPlist](https://github.com/Mrered/Gobin)  |    Go    | ![a](assets/a.svg)![1](assets/1.svg) |
+|  `reportgen`  |   [reportgen](https://github.com/Mrered/Gobin)   |    Go    | ![a](assets/a.svg)![1](assets/1.svg) |
+|    `shurl`    |    [ShURL](https://github.com/Mrered/yourlsh)    |  Shell   | ![a](assets/a.svg)![1](assets/1.svg) |
 
 ### Casks
 
-|   Cask Name   |                          Site                          | Language |                 Note                 |
-| :-----------: | :----------------------------------------------------: | :------: | :----------------------------------: |
-|    `alist`    |            [AList](https://alist.nn.ci/zh)             |    Go    | ![a](assets/a.svg)![1](assets/1.svg) |
-|   `bbdown`    |      [BBDown](https://github.com/nilaoda/BBDown)       |    C#    | ![a](assets/a.svg)![1](assets/1.svg) |
-|  `easytier`   |            [EasyTier](https://easytier.cn/)            |    C#    | ![a](assets/a.svg)![1](assets/1.svg) |
-|  `json-tui`   | [json-tui](https://github.com/ArthurSonzogni/json-tui) |   C++    | ![a](assets/a.svg)![1](assets/1.svg) |
-| `nezha-agent` |    [哪吒监控服务](https://github.com/nezhahq/agent)    |    Go    | ![a](assets/a.svg)![1](assets/1.svg) |
-|   `shiroa`    |   [shiroa](https://github.com/Myriad-Dreamin/shiroa)   |   Rust   | ![a](assets/a.svg)![1](assets/1.svg) |
-|   `ticker`    |   [ticker](https://github.com/achannarasappa/ticker)   |    Go    | ![a](assets/a.svg)![1](assets/1.svg) |
+| Cask Name  |                          Site                          | Language |                 Note                 |
+| :--------: | :----------------------------------------------------: | :------: | :----------------------------------: |
+|  `alist`   |            [AList](https://alist.nn.ci/zh)             |    Go    | ![a](assets/a.svg)![1](assets/1.svg) |
+|  `bbdown`  |      [BBDown](https://github.com/nilaoda/BBDown)       |    C#    | ![a](assets/a.svg)![1](assets/1.svg) |
+| `json-tui` | [json-tui](https://github.com/ArthurSonzogni/json-tui) |   C++    | ![a](assets/a.svg)![1](assets/1.svg) |
+|  `shiroa`  |   [shiroa](https://github.com/Myriad-Dreamin/shiroa)   |   Rust   | ![a](assets/a.svg)![1](assets/1.svg) |
+|  `ticker`  |   [ticker](https://github.com/achannarasappa/ticker)   |    Go    | ![a](assets/a.svg)![1](assets/1.svg) |
 
 ## 🌟 STAR ME
 
