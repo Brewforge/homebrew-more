@@ -6,8 +6,8 @@ class Easytier < Formula
   license "Apache-2.0"
   head "https://github.com/EasyTier/EasyTier", branch: "main"
 
-  depends_on "protobuf"
   depends_on "rust" => :build
+  depends_on "protobuf"
 
   def install
     system "cargo", "install", *std_cargo_args(path: "easytier")
