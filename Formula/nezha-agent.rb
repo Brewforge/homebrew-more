@@ -9,7 +9,14 @@ class NezhaAgent < Formula
   depends_on "go" => :build
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w"), "cmd/agent"
+    arch = Hardware::CPU.arch.to_s
+    ldflags = %W[
+      -s -w
+      -X github.com/nezhahq/agent/pkg/monitor.Version=#{version}
+      -X main.arch=#{arch}
+    ]
+    system "go", "generate", "./..."
+    system "go", "build", *std_go_args(ldflags:), "./cmd/agent"
   end
 
   service do
