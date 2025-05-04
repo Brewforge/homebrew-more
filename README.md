@@ -63,14 +63,13 @@ brew help
 
 ### Formulae
 
-| Formula Name  |                       Site                       | Language |                 Note                 |
-| :-----------: | :----------------------------------------------: | :------: | :----------------------------------: |
-|  `easytier`   |         [EasyTier](https://easytier.cn/)         |   Rust   | ![a](assets/a.svg)![1](assets/1.svg) |
-|   `makemf`    |    [MakeMF](https://github.com/Mrered/Gobin)     |    Go    | ![a](assets/a.svg)![1](assets/1.svg) |
-| `nezha-agent` | [哪吒监控服务](https://github.com/nezhahq/agent) |    Go    | ![a](assets/a.svg)![1](assets/1.svg) |
-| `ollamaplist` |  [OllamaPlist](https://github.com/Mrered/Gobin)  |    Go    | ![a](assets/a.svg)![1](assets/1.svg) |
-|  `reportgen`  |   [reportgen](https://github.com/Mrered/Gobin)   |    Go    | ![a](assets/a.svg)![1](assets/1.svg) |
-|    `shurl`    |    [ShURL](https://github.com/Mrered/yourlsh)    |  Shell   | ![a](assets/a.svg)![1](assets/1.svg) |
+| Formula Name  |                      Site                      | Language |                 Note                 |
+| :-----------: | :--------------------------------------------: | :------: | :----------------------------------: |
+|  `easytier`   |        [EasyTier](https://easytier.cn/)        |   Rust   | ![a](assets/a.svg)![1](assets/1.svg) |
+|   `makemf`    |   [MakeMF](https://github.com/Mrered/Gobin)    |    Go    | ![a](assets/a.svg)![1](assets/1.svg) |
+| `ollamaplist` | [OllamaPlist](https://github.com/Mrered/Gobin) |    Go    | ![a](assets/a.svg)![1](assets/1.svg) |
+|  `reportgen`  |  [reportgen](https://github.com/Mrered/Gobin)  |    Go    | ![a](assets/a.svg)![1](assets/1.svg) |
+|    `shurl`    |   [ShURL](https://github.com/Mrered/yourlsh)   |  Shell   | ![a](assets/a.svg)![1](assets/1.svg) |
 
 ### Casks
 
