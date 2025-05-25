@@ -14,7 +14,7 @@ class Easytier < Formula
   end
 
   service do
-    run [opt_bin/"easytier-core", "-c", "~/.config/easytier/config.yaml"]
+    run [opt_bin/"easytier-core", "-c", "~/.config/easytier/config.toml"]
     keep_alive true
     working_dir var
     log_path var/"log/easytier.log"
