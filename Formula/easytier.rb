@@ -1,8 +1,8 @@
 class Easytier < Formula
   desc "Simple, decentralized mesh VPN with WireGuard support"
   homepage "https://easytier.cn/"
-  url "https://github.com/EasyTier/EasyTier/archive/refs/tags/v2.2.4.tar.gz"
-  sha256 "2c2d0af6db48d62d57ae26486c2f3a69b98f7a6bc5097c073266e7d09fb1ccb4"
+  url "https://github.com/EasyTier/EasyTier/archive/refs/tags/v2.3.0.tar.gz"
+  sha256 "9d50b59cd3e6362170a01769abf6eee68dda023cbed52f9f48603293d0e9ef2f"
   license "Apache-2.0"
   head "https://github.com/EasyTier/EasyTier", branch: "main"
 
@@ -12,10 +12,26 @@ class Easytier < Formula
   def install
     system "cargo", "install", *std_cargo_args(path: "easytier")
   end
-
+  
+  def caveats
+    <<~EOS
+      ⚠️ EasyTier requires root privileges to create TUN/utun devices.
+  
+      If your configuration uses TUN or WireGuard (e.g. includes wg:// listeners),
+      you must start the service with root privileges:
+  
+          sudo brew services start easytier
+  
+      Note: This will change ownership of some EasyTier-related paths to root,
+      which may require manual removal using `sudo rm` during future upgrades,
+      reinstalls, or uninstalls.
+    EOS
+  end
+  
   service do
     run [opt_bin/"easytier-core", "-c", "~/.config/easytier/config.toml"]
     keep_alive true
+    require_root true
     working_dir var
     log_path var/"log/easytier.log"
     error_log_path var/"log/easytier.log"
