@@ -12,22 +12,22 @@ class Easytier < Formula
   def install
     system "cargo", "install", *std_cargo_args(path: "easytier")
   end
-  
+
   def caveats
     <<~EOS
       ⚠️ EasyTier requires root privileges to create TUN/utun devices.
-  
+
       If your configuration uses TUN or WireGuard (e.g. includes wg:// listeners),
       you must start the service with root privileges:
-  
+
           sudo brew services start easytier
-  
+
       Note: This will change ownership of some EasyTier-related paths to root,
       which may require manual removal using `sudo rm` during future upgrades,
       reinstalls, or uninstalls.
     EOS
   end
-  
+
   service do
     run [opt_bin/"easytier-core", "-c", "~/.config/easytier/config.toml"]
     keep_alive true
