@@ -2,13 +2,13 @@ name: Brew Tap
 description: Homebrew Tap
 
 runs:
-  using: "composite"
+  using: 'composite'
 
   steps:
     - name: Add Tap
       shell: bash -ieo pipefail {0}
       run: |
-        brew tap brewforge/chinese
+        brew tap brewforge/more
 
     - name: Install Homebrew's dependencies
       shell: bash -ieo pipefail {0}
