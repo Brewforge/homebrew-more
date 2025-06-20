@@ -1,8 +1,8 @@
 class Easytier < Formula
   desc "Simple, decentralized mesh VPN with WireGuard support"
   homepage "https://easytier.cn/"
-  url "https://github.com/EasyTier/EasyTier/archive/refs/tags/v2.3.1.tar.gz"
-  sha256 "9f6f52d789ebe4d017365bb6b1a7f0e18063c13196ce58d825e490d7fba9716d"
+  url "https://github.com/EasyTier/EasyTier/archive/refs/tags/v2.3.2.tar.gz"
+  sha256 "bd1b3345346468555e473d0244b7672caf41c7b7d581469729f0e2b4bae826b8"
   license "Apache-2.0"
   head "https://github.com/EasyTier/EasyTier", branch: "main"
 
