@@ -75,9 +75,9 @@ brew help
 
 | Cask Name  |                          Site                          | Language |                 Note                 |
 | :--------: | :----------------------------------------------------: | :------: | :----------------------------------: |
-|  `alist`   |            [AList](https://alist.nn.ci/zh)             |    Go    | ![a](assets/a.svg)![1](assets/1.svg) |
 |  `bbdown`  |      [BBDown](https://github.com/nilaoda/BBDown)       |    C#    | ![a](assets/a.svg)![1](assets/1.svg) |
 | `json-tui` | [json-tui](https://github.com/ArthurSonzogni/json-tui) |   C++    | ![a](assets/a.svg)![1](assets/1.svg) |
+| `openlist` |            [OpenList](https://oplist.org/)             |    Go    | ![a](assets/a.svg)![1](assets/1.svg) |
 |  `shiroa`  |   [shiroa](https://github.com/Myriad-Dreamin/shiroa)   |   Rust   | ![a](assets/a.svg)![1](assets/1.svg) |
 |  `ticker`  |   [ticker](https://github.com/achannarasappa/ticker)   |    Go    | ![a](assets/a.svg)![1](assets/1.svg) |
 
