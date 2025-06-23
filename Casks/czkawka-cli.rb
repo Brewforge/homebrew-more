@@ -2,11 +2,11 @@ cask "czkawka-cli" do
   arch arm: "_arm", intel: ""
   os macos: "mac", linux: "linux"
 
-  version "8.0.0"
-  sha256 arm:          "4df84014d818bd6dff2b365b847645340e8955c4450fe965688f41af89a38baa",
-         x86_64:       "262c15ca7890898560d00e5ffd5ada1864fbd9d0d58ac4ee492c9f3e73f3ae5f",
-         arm64_linux:  "5bb1ab8987a33be08ad07367d2e70ea4f18868ba4538a77019aba48e76ed7892",
-         x86_64_linux: "ec233b7d8d40b1cc4447dac05be343f53a757dc605743a8808abaa8e97e5d10e"
+  version "9.0.0"
+  sha256 arm:          "4096cab9c9f68b0911b89e3b2d5d2ee814ecceaf111fc061df3c2d1e450a2003",
+         x86_64:       "fd4d1fed905c4959a19beba24c1acfaf17d48618c056ced78b134104fbc519d1",
+         arm64_linux:  "ce401a5877a30065d79be5ba9b390eed79dd7ab00284dfeb470b8d6e7ed82a5f",
+         x86_64_linux: "850cabbd47e3cf2fe33f7fa953b51f43ce90226954adce76aed5ddcb38e56d62"
 
   url "https://github.com/qarmin/czkawka/releases/download/#{version}/#{os}_czkawka_cli#{arch}"
   name "czkawka_cli"
