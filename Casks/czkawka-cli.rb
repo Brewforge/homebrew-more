@@ -9,7 +9,7 @@ cask "czkawka-cli" do
          x86_64_linux: "850cabbd47e3cf2fe33f7fa953b51f43ce90226954adce76aed5ddcb38e56d62"
 
   url "https://github.com/qarmin/czkawka/releases/download/#{version}/#{os}_czkawka_cli#{arch}"
-  name "czkawka_cli"
+  name "czkawka"
   desc "Duplicate file utility"
   homepage "https://github.com/qarmin/czkawka"
 
@@ -18,5 +18,5 @@ cask "czkawka-cli" do
     strategy :github_latest
   end
 
-  binary "czkawka_cli"
+  binary "#{os}_czkawka_cli#{arch}", target: "czkawka"
 end
