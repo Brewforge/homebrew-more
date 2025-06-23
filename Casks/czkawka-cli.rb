@@ -18,5 +18,7 @@ cask "czkawka-cli" do
     strategy :github_latest
   end
 
+  conflicts_with cask: "brewforge/extras/czkawka-gui"
+
   binary "#{os}_czkawka_cli#{arch}", target: "czkawka"
 end
