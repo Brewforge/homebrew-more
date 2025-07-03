@@ -6,6 +6,11 @@ class Easytier < Formula
   license "Apache-2.0"
   head "https://github.com/EasyTier/EasyTier", branch: "main"
 
+  livecheck do
+    url :url
+    strategy :github_latest
+  end
+
   depends_on "rust" => :build
   depends_on "protobuf"
 
