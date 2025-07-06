@@ -30,5 +30,7 @@ cask "bbdown" do
     end
   end
 
+  auto_updates true
+
   binary "bbdown"
 end

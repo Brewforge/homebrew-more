@@ -19,6 +19,8 @@ cask "openlist" do
     strategy :github_latest
   end
 
+  auto_updates true
+
   binary "openlist"
   service do
     run [opt_bin/"openlist", "server"]

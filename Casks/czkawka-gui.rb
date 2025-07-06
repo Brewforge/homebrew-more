@@ -18,6 +18,7 @@ cask "czkawka-gui" do
     strategy :github_latest
   end
 
+  auto_updates true
   conflicts_with cask: "brewforge/more/czkawka-cli"
   depends_on formula: "gtk4"
 
