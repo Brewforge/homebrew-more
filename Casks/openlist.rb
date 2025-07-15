@@ -28,7 +28,7 @@ cask "openlist" do
     keep_alive true
   end
 
-  def caveats
+  caveats do
     <<~EOS
       To reveal openlist admin user's info in default `config.json` again, run the following command:
         cd #{staged_path} && openlist admin
