@@ -28,16 +28,14 @@ cask "openlist" do
     keep_alive true
   end
 
-  caveats do
-    <<~EOS
-      To reveal openlist admin user's info in default `config.json` again, run the following command:
-        cd #{staged_path} && openlist admin
-      Or reveal `admin` password via `sqlite3` command (before v3.25.1):
-        sqlite3 etc/openlist/data.db "select password from x_users where username = 'admin'"
-      Or reset `admin` password:
-        cd #{staged_path} && openlist admin random
-      Or set new `admin` password:
-        cd #{staged_path} && openlist admin set NEW_PASSWORD
-    EOS
-  end
+  caveats <<~EOS
+    To reveal openlist admin user's info in default `config.json` again, run the following command:
+      cd #{staged_path} && openlist admin
+    Or reveal `admin` password via `sqlite3` command (before v3.25.1):
+      sqlite3 etc/openlist/data.db "select password from x_users where username = 'admin'"
+    Or reset `admin` password:
+      cd #{staged_path} && openlist admin random
+    Or set new `admin` password:
+      cd #{staged_path} && openlist admin set NEW_PASSWORD
+  EOS
 end
