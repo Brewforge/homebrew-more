@@ -2,11 +2,11 @@ cask "czkawka-gui" do
   arch arm: "arm64", intel: "x86_64"
   os macos: "mac", linux: "linux"
 
-  version "9.0.0"
-  sha256 arm:          "725cb58f3d07f45ed50b3d82312ef3fd5dc8734f9030082414d02916e4289f07",
-         x86_64:       "bb3137e0317ce1bc62f931a478121755e8f580eaf1094f2e9028617d0fdb919e",
-         arm64_linux:  "b78ea29da65d5c9a81278e9ec58d74be18c9fa084bbb2fad724d39fc7b3ebc46",
-         x86_64_linux: "b7b9a9c0779015b94e046e2cb242b99296fc290b5b1e5fdbdeeec1cfbad3150a"
+  version "10.0.0"
+  sha256 arm:          "f095078ad8f906633447abb102c300e50337d7e53de386dfe2e26c25233e9cc2",
+         x86_64:       "e1070ef052f20c9144e8c2a2dcfb6a578549918eab78d5162497c1e8106d7d70",
+         arm64_linux:  "512f4d9a385da6e7755ccd86853021e72a7352bebd812174554f545423663b87",
+         x86_64_linux: "99c8d36f56a49c27b3a98a450210a59d36e64b6cfff7a48a2b440199b66f1a76"
 
   url "https://github.com/qarmin/czkawka/releases/download/#{version}/#{os}_czkawka_gui_#{arch}"
   name "czkawka"
