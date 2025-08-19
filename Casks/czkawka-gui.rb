@@ -1,5 +1,5 @@
 cask "czkawka-gui" do
-  arch arm: "_arm64", intel: ""
+  arch arm: "arm64", intel: "x86_64"
   os macos: "mac", linux: "linux"
 
   version "9.0.0"
@@ -8,7 +8,7 @@ cask "czkawka-gui" do
          arm64_linux:  "b78ea29da65d5c9a81278e9ec58d74be18c9fa084bbb2fad724d39fc7b3ebc46",
          x86_64_linux: "b7b9a9c0779015b94e046e2cb242b99296fc290b5b1e5fdbdeeec1cfbad3150a"
 
-  url "https://github.com/qarmin/czkawka/releases/download/#{version}/#{os}_czkawka_gui#{arch}"
+  url "https://github.com/qarmin/czkawka/releases/download/#{version}/#{os}_czkawka_gui_#{arch}"
   name "czkawka"
   desc "Duplicate file utility"
   homepage "https://github.com/qarmin/czkawka"
