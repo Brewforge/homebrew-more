@@ -1,5 +1,5 @@
 cask "czkawka-gui" do
-  arch arm: "_arm", intel: ""
+  arch arm: "_arm64", intel: ""
   os macos: "mac", linux: "linux"
 
   version "9.0.0"
