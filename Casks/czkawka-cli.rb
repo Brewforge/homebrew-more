@@ -21,5 +21,5 @@ cask "czkawka-cli" do
   auto_updates true
   conflicts_with cask: "brewforge/more/czkawka-gui"
 
-  binary "#{os}_czkawka_cli#{arch}", target: "czkawka"
+  binary "#{os}_czkawka_cli_#{arch}", target: "czkawka"
 end
