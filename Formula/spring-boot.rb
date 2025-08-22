@@ -1,8 +1,8 @@
 class SpringBoot < Formula
   desc "CLI for Spring Boot"
   homepage "https://spring.io/projects/spring-boot"
-  url "https://repo.maven.apache.org/maven2/org/springframework/boot/spring-boot-cli/3.5.4/spring-boot-cli-3.5.4-bin.tar.gz"
-  sha256 "41f608403e982b25e4384cff287f00be0a307ac25d2f56f1210488a9bcc51627"
+  url "https://repo.maven.apache.org/maven2/org/springframework/boot/spring-boot-cli/3.5.5/spring-boot-cli-3.5.5-bin.tar.gz"
+  sha256 "144e9f72a1e14cb1de30487c7d76abbe2053b65995867e86985b87c33708ebc3"
   license "Apache-2.0"
   head "https://github.com/spring-projects/spring-boot.git", branch: "main"
 
