@@ -15,7 +15,7 @@ cask "bbdown" do
 
   livecheck do
     url :homepage
-    regex(/([\.|\d]+_\d{8})/i)
+    regex(/([.|\d]+_\d{8})/i)
     strategy :github_latest do |json, regex|
       matched = json["assets"].filter_map do |asset|
         match = asset["name"].match(regex)
