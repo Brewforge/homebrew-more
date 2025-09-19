@@ -22,4 +22,6 @@ cask "czkawka-cli" do
   conflicts_with cask: "brewforge/more/czkawka-gui"
 
   binary "#{os}_czkawka_cli_#{arch}", target: "czkawka"
+
+  zap trash: "~/Library/Caches/pl.Qarmin.Czkawka"
 end

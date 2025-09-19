@@ -22,4 +22,6 @@ cask "krokiet" do
   conflicts_with cask: "brewforge/more/czkawka-cli"
 
   binary "#{os}_krokiet_#{arch}", target: "krokiet"
+
+  zap trash: "~/Library/Application Support/pl.Qarmin.Krokiet"
 end
