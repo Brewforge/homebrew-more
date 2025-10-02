@@ -21,5 +21,5 @@ cask "bun" do
 
   auto_updates true
 
-  binary "bun"
+  binary "bun-#{os}-#{arch}/bun"
 end
