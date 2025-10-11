@@ -2,11 +2,11 @@ cask "openlist" do
   arch arm: "arm64", intel: "amd64"
   os macos: "darwin", linux: "linux"
 
-  version "4.1.3"
-  sha256 arm:          "9384d98e07422956140c0ba219c96978e9fd651701f05d04d9d8f8799c34f247",
-         x86_64:       "f2d5b9bf7984624f77e68185bab0cd1921be78ca7c68fb272702cfa0f78d6859",
-         arm64_linux:  "456cd5ae985495ab3d2d78650328d1cbce1d0ffc6b45eed356b9f1f266f0f03f",
-         x86_64_linux: "84e19f5cda1a61ae020bd0905834a8ffb5168223c6fb753a6d28b610d45d6817"
+  version "4.1.4"
+  sha256 arm:          "8869da30a26f40b302b220183d087bcd2b4d21b0357d39f087dc8bc7e0a9fbc2",
+         x86_64:       "021f191fd8fb9219ba15b44d4dd7bef846ac9d4a1fc30be416bdca6306674c9a",
+         arm64_linux:  "4a917bb4d2f1edf850919c0dd845d8d6aa9b119d1e30871e27c3d12ae1143221",
+         x86_64_linux: "c8abb3d8a4eed1a3624e17ff86fb9e580f328b59732cc6ad1f6b129bf00580f4"
 
   url "https://github.com/OpenListTeam/OpenList/releases/download/v#{version}/openlist-#{os}-#{arch}.tar.gz",
       verified: "github.com/OpenListTeam/OpenList/"
