@@ -2,11 +2,11 @@ cask "openlist" do
   arch arm: "arm64", intel: "amd64"
   os macos: "darwin", linux: "linux"
 
-  version "4.1.5"
-  sha256 arm:          "3d0700c2705bf2ead0ca7702a4fff9e9e17b48f7b8dc478bd2df3907211e347d",
-         x86_64:       "2b7712d8cfb35c6573d0149eae2b1140208b5c3ef499df46fa10ebba0ba867da",
-         arm64_linux:  "066cd7dca81b0d03534464747ec2561a9d78d187377417012a1a6f00bfc1210d",
-         x86_64_linux: "29059a28c463838a8c5f7a12689fb9f41604476181b1ac6119b3ffb6b426d0e4"
+  version "4.1.6"
+  sha256 arm:          "ba6fb1dd7900bfe00f4b18c632402dbaa8706c96f92bd8277b1f678def808a11",
+         x86_64:       "4e6c1a4ca0690e0483c35efe55fea0384f9969197c9c2b560dad6b898eab8c41",
+         arm64_linux:  "1ecfdd1f2fc5ac3284dd02afc6f660c5cbf8374aeba7cad91a7e2d77863cbbcb",
+         x86_64_linux: "52749ce0926aeb5ab71a0fd39f7856d393378a485575a13e6f64eb602f2d811b"
 
   url "https://github.com/OpenListTeam/OpenList/releases/download/v#{version}/openlist-#{os}-#{arch}.tar.gz",
       verified: "github.com/OpenListTeam/OpenList/"
