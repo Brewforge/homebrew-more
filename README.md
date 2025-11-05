@@ -80,7 +80,6 @@ brew help
 | `czkawka-cli` |      [Czkawka](https://github.com/qarmin/czkawka)      |   Rust   | ![a](assets/a.svg)![1](assets/1.svg) |
 |   `krokiet`   |      [Czkawka](https://github.com/qarmin/czkawka)      |   Rust   | ![a](assets/a.svg)![1](assets/1.svg) |
 |  `json-tui`   | [json-tui](https://github.com/ArthurSonzogni/json-tui) |   C++    | ![a](assets/a.svg)![1](assets/1.svg) |
-|  `openlist`   |            [OpenList](https://oplist.org/)             |    Go    | ![a](assets/a.svg)![1](assets/1.svg) |
 |   `shiroa`    |   [shiroa](https://github.com/Myriad-Dreamin/shiroa)   |   Rust   | ![a](assets/a.svg)![1](assets/1.svg) |
 |   `ticker`    |   [ticker](https://github.com/achannarasappa/ticker)   |    Go    | ![a](assets/a.svg)![1](assets/1.svg) |
 
