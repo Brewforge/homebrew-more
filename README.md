@@ -78,7 +78,7 @@ brew help
 |    `bbdown`    |      [BBDown](https://github.com/nilaoda/BBDown)       |    C#    | ![a](assets/a.svg)![1](assets/1.svg) |
 |     `bun`      |                 [Bun](https://bun.sh/)                 |    C#    | ![a](assets/a.svg)![1](assets/1.svg) |
 | `czkawka-cli`  |      [Czkawka](https://github.com/qarmin/czkawka)      |   Rust   | ![a](assets/a.svg)![1](assets/1.svg) |
-| `easytier-app` |            [EasyTier](https://easytier.cn/)            |   Rust   | ![a](assets/a.svg)![1](assets/1.svg) |
+| `easytier-cli` |            [EasyTier](https://easytier.cn/)            |   Rust   | ![a](assets/a.svg)![1](assets/1.svg) |
 |   `krokiet`    |      [Czkawka](https://github.com/qarmin/czkawka)      |   Rust   | ![a](assets/a.svg)![1](assets/1.svg) |
 |   `json-tui`   | [json-tui](https://github.com/ArthurSonzogni/json-tui) |   C++    | ![a](assets/a.svg)![1](assets/1.svg) |
 |    `shiroa`    |   [shiroa](https://github.com/Myriad-Dreamin/shiroa)   |   Rust   | ![a](assets/a.svg)![1](assets/1.svg) |

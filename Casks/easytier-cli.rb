@@ -1,4 +1,4 @@
-cask "easytier-app" do
+cask "easytier-cli" do
   arch arm: "aarch64", intel: "x86_64"
   os macos: "macos", linux: "linux"
 
