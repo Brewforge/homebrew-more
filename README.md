@@ -73,15 +73,16 @@ brew help
 
 ### Casks
 
-|   Cask Name   |                          Site                          | Language |                 Note                 |
-|:-------------:|:------------------------------------------------------:|:--------:|:------------------------------------:|
-|   `bbdown`    |      [BBDown](https://github.com/nilaoda/BBDown)       |    C#    | ![a](assets/a.svg)![1](assets/1.svg) |
-|     `bun`     |                 [Bun](https://bun.sh/)                 |    C#    | ![a](assets/a.svg)![1](assets/1.svg) |
-| `czkawka-cli` |      [Czkawka](https://github.com/qarmin/czkawka)      |   Rust   | ![a](assets/a.svg)![1](assets/1.svg) |
-|   `krokiet`   |      [Czkawka](https://github.com/qarmin/czkawka)      |   Rust   | ![a](assets/a.svg)![1](assets/1.svg) |
-|  `json-tui`   | [json-tui](https://github.com/ArthurSonzogni/json-tui) |   C++    | ![a](assets/a.svg)![1](assets/1.svg) |
-|   `shiroa`    |   [shiroa](https://github.com/Myriad-Dreamin/shiroa)   |   Rust   | ![a](assets/a.svg)![1](assets/1.svg) |
-|   `ticker`    |   [ticker](https://github.com/achannarasappa/ticker)   |    Go    | ![a](assets/a.svg)![1](assets/1.svg) |
+|   Cask Name    |                          Site                          | Language |                 Note                 |
+|:--------------:|:------------------------------------------------------:|:--------:|:------------------------------------:|
+|    `bbdown`    |      [BBDown](https://github.com/nilaoda/BBDown)       |    C#    | ![a](assets/a.svg)![1](assets/1.svg) |
+|     `bun`      |                 [Bun](https://bun.sh/)                 |    C#    | ![a](assets/a.svg)![1](assets/1.svg) |
+| `czkawka-cli`  |      [Czkawka](https://github.com/qarmin/czkawka)      |   Rust   | ![a](assets/a.svg)![1](assets/1.svg) |
+| `easytier-app` |            [EasyTier](https://easytier.cn/)            |   Rust   | ![a](assets/a.svg)![1](assets/1.svg) |
+|   `krokiet`    |      [Czkawka](https://github.com/qarmin/czkawka)      |   Rust   | ![a](assets/a.svg)![1](assets/1.svg) |
+|   `json-tui`   | [json-tui](https://github.com/ArthurSonzogni/json-tui) |   C++    | ![a](assets/a.svg)![1](assets/1.svg) |
+|    `shiroa`    |   [shiroa](https://github.com/Myriad-Dreamin/shiroa)   |   Rust   | ![a](assets/a.svg)![1](assets/1.svg) |
+|    `ticker`    |   [ticker](https://github.com/achannarasappa/ticker)   |    Go    | ![a](assets/a.svg)![1](assets/1.svg) |
 
 ## 🌟 STAR ME
 
