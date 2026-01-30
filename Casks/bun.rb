@@ -2,11 +2,11 @@ cask "bun" do
   arch arm: "aarch64", intel: "x64"
   os macos: "darwin", linux: "linux"
 
-  version "1.3.7"
-  sha256 arm:          "16701e494998e4764d49af2fbe62d25ec59cf3c79ee696eba1def2cfe9049d64",
-         x86_64:       "cdfe9c71cacbdd9a73f098c3b050671957a7414e1321dfedd9a410d7794dae51",
-         arm64_linux:  "d5c7d651423c2bc5ae3f92d36837ffb2ddc6ee91849672500b7fe8e5a5159fbc",
-         x86_64_linux: "2bd2e0e0bdf09483be67a704607848ebe72c28420824e4ce772ce3da62c23d65"
+  version "1.3.8"
+  sha256 arm:          "672a0a9a7b744d085a1d2219ca907e3e26f5579fca9e783a9510a4f98a36212f",
+         x86_64:       "4a0ecd703b37d66abaf51e5bc24fd1249e8dc392c17ee6235710cf51a0988b85",
+         arm64_linux:  "4e9deb6814a7ec7f68725ddd97d0d7b4065bcda9a850f69d497567e995a7fa33",
+         x86_64_linux: "0322b17f0722da76a64298aad498225aedcbf6df1008a1dee45e16ecb226a3f1"
 
   url "https://github.com/oven-sh/bun/releases/download/bun-v#{version}/bun-#{os}-#{arch}.zip",
       verified: "github.com/oven-sh/bun/"
