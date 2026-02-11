@@ -20,5 +20,5 @@ cask "shiroa" do
 
   auto_updates true
 
-  binary "shiroa-#{arch}-#{os}/shiroa"
+  binary "shiroa-#{arch}-#{os}/shiroa", target: "shiroa"
 end
