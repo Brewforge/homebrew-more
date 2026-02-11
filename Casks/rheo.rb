@@ -1,5 +1,5 @@
 cask "rheo" do
-  arch arm: "x86_64", intel: "x86_64"
+  arch arm: "aarch64", intel: "x86_64"
   os macos: "apple-darwin", linux: "unknown-linux-gnu"
 
   version "0.1.1"
