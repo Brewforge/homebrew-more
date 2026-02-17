@@ -83,6 +83,7 @@ brew help
 |   `json-tui`   | [json-tui](https://github.com/ArthurSonzogni/json-tui) |   C++    | ![a](assets/a.svg)![1](assets/1.svg) |
 |    `shiroa`    |   [shiroa](https://github.com/Myriad-Dreamin/shiroa)   |   Rust   | ![a](assets/a.svg)![1](assets/1.svg) |
 |    `ticker`    |   [ticker](https://github.com/achannarasappa/ticker)   |    Go    | ![a](assets/a.svg)![1](assets/1.svg) |
+|     `xytz`     |         [xytz](https://github.com/xdagiz/xytz)         |    Go    | ![a](assets/a.svg)![1](assets/1.svg) |
 
 ## 🌟 STAR ME
 
