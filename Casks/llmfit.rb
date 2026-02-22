@@ -20,5 +20,5 @@ cask "llmfit" do
 
   auto_updates true
 
-  binary "llmfit-v#{version}-#{arch}-#{os}", target: "llmfit"
+  binary "llmfit-v#{version}-#{arch}-#{os}/llmfit", target: "llmfit"
 end
