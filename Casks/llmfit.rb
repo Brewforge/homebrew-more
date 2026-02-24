@@ -2,11 +2,11 @@ cask "llmfit" do
   arch arm: "aarch64", intel: "x86_64"
   os macos: "apple-darwin", linux: "unknown-linux-gnu"
 
-  version "0.3.8"
-  sha256 arm:          "243375d90a8edca1bd83ddcb1d2b5c8ce5f9649ec13c9ebe8f78d67eb6e27149",
-         x86_64:       "40be9ea73a91c1673d48cd53547f3c6c74ab4fd58564b15ea3a986ad060f0228",
-         arm64_linux:  "46eaca1af1c75039fdb0b60d5f33fe4c5330163e5324a5fe43358a003951778f",
-         x86_64_linux: "e6a51aadfa192f09c594d8f94f6f6a7590269b564900184f0ef2862bc0228846"
+  version "0.4.3"
+  sha256 arm:          "9bb95e286aaa786fbd2841890550b426f9b5fcd0f1469ae697d2798a4b728d93",
+         x86_64:       "efe87628bc933c874af3091cea43a4ae8dae0a7b9104908877ac3c2abdf2df03",
+         arm64_linux:  "5d8d6ac352ed457ba11cbae3b97c8bba5992188e912f7d5ed364e61394d8125c",
+         x86_64_linux: "726a93a9733f0e1272d0bad5d8543786f42c35150e8b93e52b0b629b835544c8"
 
   url "https://github.com/AlexsJones/llmfit/releases/download/v#{version}/llmfit-v#{version}-#{arch}-#{os}.tar.gz"
   name "llmfit"
