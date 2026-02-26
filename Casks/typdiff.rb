@@ -2,11 +2,11 @@ cask "typdiff" do
   arch arm: "aarch64", intel: "x86_64"
   os macos: "apple-darwin", linux: "unknown-linux-gnu"
 
-  version "0.1.0"
-  sha256 arm:          "58b4f48d83a9922e50f3c67d9bdf8248343c2e8ff3711bb62be0345cc3930821",
-         x86_64:       "8a7821e3b4018202f74e75543308a4d4f1be61dcdc0d2159c3b5afd44d3c3e31",
-         arm64_linux:  "30a81748598842f1a91f90206c108c82df3099dd10e4e56dc7574a70c0d73daf",
-         x86_64_linux: "e46cbb4b568177c5d61755622345939fe500983403d4d45e21059b813e724b88"
+  version "0.1.1"
+  sha256 arm:          "db3093dce946c4d5c632c425a9a3db5ba025c3d1ff83f0619a07034e3a429deb",
+         x86_64:       "18365c9dd25c203f5454f0a0060f60ffea6b13d256fbd307c07e1921b52c927d",
+         arm64_linux:  "664376d35fde8532ed327571ba10b1056891b39b652877d7349410339b5d17c6",
+         x86_64_linux: "8b63979e8c08f96d39c69f01a59993852da003cd1471a9811a1257c0724c0fe5"
 
   url "https://github.com/sou1118/typdiff/releases/download/v#{version}/typdiff-#{arch}-#{os}.tar.gz"
   name "typdiff"
