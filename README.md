@@ -76,6 +76,7 @@ brew help
 |   Cask Name    |                          Site                          | Language |                 Note                 |
 |:--------------:|:------------------------------------------------------:|:--------:|:------------------------------------:|
 |    `bbdown`    |      [BBDown](https://github.com/nilaoda/BBDown)       |    C#    | ![a](assets/a.svg)![1](assets/1.svg) |
+|    `biliup`    |       [biliup](https://biliup.github.io/biliup/)       |   Rust   | ![a](assets/a.svg)![1](assets/1.svg) |
 |     `bun`      |                 [Bun](https://bun.sh/)                 |   Zig    | ![a](assets/a.svg)![1](assets/1.svg) |
 | `czkawka-cli`  |      [Czkawka](https://github.com/qarmin/czkawka)      |   Rust   | ![a](assets/a.svg)![1](assets/1.svg) |
 | `easytier-cli` |            [EasyTier](https://easytier.cn/)            |   Rust   | ![a](assets/a.svg)![1](assets/1.svg) |
