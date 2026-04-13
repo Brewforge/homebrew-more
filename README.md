@@ -64,7 +64,7 @@ brew help
 ### Formulae
 
 | Formula Name  |                      Site                      | Language |                 Note                 |
-|:-------------:|:----------------------------------------------:|:--------:|:------------------------------------:|
+| :-----------: | :--------------------------------------------: | :------: | :----------------------------------: |
 |  `easytier`   |        [EasyTier](https://easytier.cn/)        |   Rust   | ![a](assets/a.svg)![1](assets/1.svg) |
 |   `makemf`    |   [MakeMF](https://github.com/Mrered/Gobin)    |    Go    | ![a](assets/a.svg)![1](assets/1.svg) |
 | `ollamaplist` | [OllamaPlist](https://github.com/Mrered/Gobin) |    Go    | ![a](assets/a.svg)![1](assets/1.svg) |
@@ -74,12 +74,13 @@ brew help
 ### Casks
 
 |   Cask Name    |                          Site                          | Language |                 Note                 |
-|:--------------:|:------------------------------------------------------:|:--------:|:------------------------------------:|
+| :------------: | :----------------------------------------------------: | :------: | :----------------------------------: |
 |    `bbdown`    |      [BBDown](https://github.com/nilaoda/BBDown)       |    C#    | ![a](assets/a.svg)![1](assets/1.svg) |
 |    `biliup`    |       [biliup](https://biliup.github.io/biliup/)       |   Rust   | ![a](assets/a.svg)![1](assets/1.svg) |
 |     `bun`      |                 [Bun](https://bun.sh/)                 |   Zig    | ![a](assets/a.svg)![1](assets/1.svg) |
 | `czkawka-cli`  |      [Czkawka](https://github.com/qarmin/czkawka)      |   Rust   | ![a](assets/a.svg)![1](assets/1.svg) |
 | `easytier-cli` |            [EasyTier](https://easytier.cn/)            |   Rust   | ![a](assets/a.svg)![1](assets/1.svg) |
+|   `gotmail`    |     [GoTMail](https://github.com/ivaquero/gotmail)     |    Go    | ![a](assets/a.svg)![1](assets/1.svg) |
 |   `json-tui`   | [json-tui](https://github.com/ArthurSonzogni/json-tui) |   C++    | ![a](assets/a.svg)![1](assets/1.svg) |
 |   `krokiet`    |      [Czkawka](https://github.com/qarmin/czkawka)      |   Rust   | ![a](assets/a.svg)![1](assets/1.svg) |
 |    `shiroa`    |   [shiroa](https://github.com/Myriad-Dreamin/shiroa)   |   Rust   | ![a](assets/a.svg)![1](assets/1.svg) |
