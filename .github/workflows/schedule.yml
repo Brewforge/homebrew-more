@@ -27,7 +27,6 @@ env:
 
 jobs:
   tap-syntax:
-    if: "!contains(github.event.head_commit.message, 'skip-build')"
     runs-on: ubuntu-22.04
     container:
       image: ghcr.io/homebrew/ubuntu22.04:master
@@ -83,3 +82,40 @@ jobs:
           cd "$(brew --repository brewforge/more)"
           ./.github/actions/bump-casks/script.sh
           ./.github/actions/bump-formulae/script.sh
+
+  auto-merge-prs:
+    name: Auto merge PRs
+    needs: bump-cli
+    if: github.repository == 'brewforge/homebrew-more'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v6
+
+      - name: Auto merge PRs
+        env:
+          GITHUB_TOKEN: ${{ secrets.HOMEBREW_GITHUB_API_TOKEN }}
+        run: |
+          # Get all open PRs
+          prs=$(gh pr list --repo brewforge/homebrew-more --state open --json number,headRefName,author --jq '.[] | select(.author.login == "Brewforge-Bot-0") | .number')
+
+          for pr in $prs; do
+            echo "Processing PR #$pr"
+
+            if gh pr view "$pr" --repo brewforge/homebrew-more --json mergeable --jq '.mergeable' | grep -q "MERGEABLE"; then
+              echo "Merging PR #$pr"
+
+              # Merge PR
+              if gh pr merge "$pr" --repo brewforge/homebrew-more --merge --delete-branch; then
+                echo "Successfully merged PR #$pr and deleted branch"
+                sleep 2s
+              else
+                echo "Failed to merge PR #$pr"
+              fi
+            else
+              echo "PR #$pr is not mergeable, skipping"
+            fi
+          done
