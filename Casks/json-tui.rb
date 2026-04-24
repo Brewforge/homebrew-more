@@ -19,5 +19,5 @@ cask "json-tui" do
 
   auto_updates true
 
-  binary "json-tui-#{version}-#{os}/bin/json-tui"
+  binary "json-tui-#{version}-#{os}/bin/json-tui", target: "json-tui"
 end
