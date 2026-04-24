@@ -1,34 +1,21 @@
 cask "ft" do
+  arch arm: "arm64", intel: "x64"
+  os macos: "macos", linux: "linux"
+
+  version "1.0.7"
+  sha256 arm:         "4be85c6c8d27ea0e7cbba59a868ffb066d5a8a95bda7e47e61b46a7dce83aafc",
+         x86_64:      "54688bfb3c8716871a36325e8a36e2d0af3fe0ecd2d1f4a08c404104195e6542",
+         arm64_linux: "fe9ab6edf6aea31a3e7a7ef1dadc09f6dbf66f00a48edc74ee1d6ed0d65b8e9f",
+         x86_64_linux: "6b1ae2ed2c64cf35e3b6be0eda7e6b92bc6de4ed0ee7ca04c92fd3d0fcccb3f8"
+
+  url "https://github.com/huanguan1978/ft/releases/download/v#{version}/ft-#{os}-#{arch}-#{version}.zip",
+      verified: "github.com/huanguan1978/ft/"
+
+  name "ft"
   desc "High-performance CLI file management and automation tool (FileTools)"
   homepage "https://github.com/huanguan1978/ft"
-  version "1.0.7"
-  license "MIT"
 
-  on_macos do
-    on_arm do
-      url "https://github.com/huanguan1978/ft/releases/download/v#{version}/ft-macos-arm64-#{version}.zip"
-      sha256 "4be85c6c8d27ea0e7cbba59a868ffb066d5a8a95bda7e47e61b46a7dce83aafc"
-    end
-    on_intel do
-      url "https://github.com/huanguan1978/ft/releases/download/v#{version}/ft-macos-x64-#{version}.zip"
-      sha256 "54688bfb3c8716871a36325e8a36e2d0af3fe0ecd2d1f4a08c404104195e6542"
-    end
-  end
-
-  on_linux do
-    if Hardware::CPU.arm64?
-      url "https://github.com/huanguan1978/ft/releases/download/v#{version}/ft-linux-arm64-#{version}.zip"
-      sha256 "fe9ab6edf6aea31a3e7a7ef1dadc09f6dbf66f00a48edc74ee1d6ed0d65b8e9f"
-    elsif Hardware::CPU.intel?
-      url "https://github.com/huanguan1978/ft/releases/download/v#{version}/ft-linux-x64-#{version}.zip"
-      sha256 "6b1ae2ed2c64cf35e3b6be0eda7e6b92bc6de4ed0ee7ca04c92fd3d0fcccb3f8"
-    elsif Hardware::CPU.riscv64?
-      url "https://github.com/huanguan1978/ft/releases/download/v#{version}/ft-linux-riscv64-#{version}.zip"
-      sha256 "ac5318ca96f498d0d26604cc6916386cd29ad27172c653d88e1fb2abb49f980c"
-    end
-  end
-
-  binary "ft"
+  binary "build/ft-#{version}-#{os}-#{arch}"
 
   caveats <<~EOS
     ft (FileTools) is a high-performance, cross-platform CLI tool
