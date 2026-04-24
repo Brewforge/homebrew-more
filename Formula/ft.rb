@@ -3,7 +3,7 @@ class Ft < Formula
   homepage "https://github.com/huanguan1978/ft"
   url "https://github.com/huanguan1978/ft/archive/refs/tags/v1.0.7.tar.gz"
   sha256 "c529d5162daaf587e808c1063c7f5010ba4af894ea37b09acd2fa7dad254d1eb"
-  license "LGPL-2.1"
+  license "LGPL-2.1-only"
 
   head "https://github.com/huanguan1978/ft", branch: "main"
 
