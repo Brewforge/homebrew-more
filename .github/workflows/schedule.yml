@@ -1,16 +1,8 @@
 name: schedule
 
 on:
-  # pull_request:
-  #   branches: [main]
-  # push:
-  #   branches: [fix-*]
   schedule:
-    # Every 12 hours
-    # - cron: "20 */12 * * *"
-    # Every day at 6am
     - cron: "0 6 * * *"
-  # allow run manually
   workflow_dispatch:
 
 concurrency:
@@ -64,58 +56,24 @@ jobs:
           cask: false
           debug: false
 
-      - name: Brew Tap
-        uses: ./.github/actions/brew-tap
+      - name: Prepare Homebrew
+        run: |
+          brew tap brewforge/extras
+          brew install coreutils
+          brew unlink coreutils && brew link coreutils
+          brew install-bundler-gems --groups "audit,style"
 
-      - name: Git Cred
-        uses: ./.github/actions/git-cred
-        with:
-          HOMEBREW_GITHUB_API_TOKEN: ${{ secrets.HOMEBREW_GITHUB_API_TOKEN }}
+      - name: Git Credentials
+        run: |
+          git config --global user.name "Brewforge-Bot"
+          git config --global user.email "brewforge-bot@aliyun.com"
+          git config --global credential.helper store
+          printf "https://x-access-token:%s@github.com\n" "$HOMEBREW_GITHUB_API_TOKEN" > "$HOME/.git-credentials"
+          chmod 0600 "$HOME/.git-credentials"
 
       - name: Bump
-        env:
-          HOMEBREW_DEVELOPER: "1"
-          HOMEBREW_GITHUB_API_TOKEN: ${{ secrets.HOMEBREW_GITHUB_API_TOKEN }}
-        shell: bash -ieo pipefail {0}
         run: |
           rsync -lrv --exclude=.git "$(pwd)" "$(brew --repository brewforge/more)"
           cd "$(brew --repository brewforge/more)"
-          ./.github/actions/bump-casks/script.sh
-          ./.github/actions/bump-formulae/script.sh
-
-  auto-merge-prs:
-    name: Auto merge PRs
-    needs: bump-cli
-    if: github.repository == 'brewforge/homebrew-more'
-    runs-on: ubuntu-latest
-    permissions:
-      contents: write
-      pull-requests: write
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v6
-
-      - name: Auto merge PRs
-        env:
-          GITHUB_TOKEN: ${{ secrets.HOMEBREW_GITHUB_API_TOKEN }}
-        run: |
-          # Get all open PRs
-          prs=$(gh pr list --repo brewforge/homebrew-more --state open --json number,headRefName,author --jq '.[] | select(.author.login == "Brewforge-Bot-0" or .author.login == "ivaquero") | .number')
-
-          for pr in $prs; do
-            echo "Processing PR #$pr"
-
-            if gh pr view "$pr" --repo brewforge/homebrew-more --json mergeable --jq '.mergeable' | grep -q "MERGEABLE"; then
-              echo "Merging PR #$pr"
-
-              # Merge PR
-              if gh pr merge "$pr" --repo brewforge/homebrew-more --merge --delete-branch; then
-                echo "Successfully merged PR #$pr and deleted branch"
-                sleep 5s
-              else
-                echo "Failed to merge PR #$pr"
-              fi
-            else
-              echo "PR #$pr is not mergeable, skipping"
-            fi
-          done
+          ./.github/scripts/bump-casks.sh
+          ./.github/scripts/bump-formulae.sh
