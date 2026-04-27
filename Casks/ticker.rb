@@ -2,11 +2,11 @@ cask "ticker" do
   arch arm: "arm64", intel: "amd64"
   os macos: "mac", linux: "linux"
 
-  version "5.2.0"
-  sha256 arm:          "476637f0cc709e3e66fe8a452a718dc7f9c8f0d9f45c71273ce807c30b279107",
-         x86_64:       "99ab53038377c3be0ec72c1183df9cf4aee1d51820c18ca8633c2de9f384f026",
-         arm64_linux:  "fc257b25afd4a80b292dbd6cae481590b17d576e95de5dcde07426a9e9b02945",
-         x86_64_linux: "79838ff5410a46f3e6e926dd6117499a4db7438cd6d9be56c633cfa7208ecdc6"
+  version "5.2.1"
+  sha256 arm:          "cf9a68720732be2743f17e77a8b9205e639ccedd2ab262b7d2260cfa530b7dc4",
+         x86_64:       "2b8012ffe4f75575e98113a73ec3b036b4cbcccedc7cd6fa1fe988d1d29fbd10",
+         arm64_linux:  "69058bceec7cc72b6628ab01d6f0231020b4147639795dfcf34c8ecaa88bce72",
+         x86_64_linux: "6c61882de840d20db449c77b4830cab945c44fd811f5f05b333160adab9098a4"
 
   url "https://github.com/achannarasappa/ticker/releases/download/v#{version}/ticker-#{version}-#{os}-#{arch}.tar.gz"
   name "ticker"
