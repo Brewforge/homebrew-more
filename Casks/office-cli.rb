@@ -10,7 +10,7 @@ cask "office-cli" do
 
   url "https://github.com/iOfficeAI/OfficeCLI/releases/download/v#{version}/officecli-#{os}-#{arch}"
   name "office-cli"
-  desc "Office CLI Tool"
+  desc "Give any AI agent full control over Word, Excel, and PowerPoint"
   homepage "https://github.com/iOfficeAI/OfficeCLI"
 
   livecheck do
