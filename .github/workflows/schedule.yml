@@ -58,7 +58,7 @@ jobs:
 
       - name: Prepare Homebrew
         run: |
-          brew tap brewforge/extras
+          brew tap brewforge/more
           brew install coreutils
           brew unlink coreutils && brew link coreutils
           brew install-bundler-gems --groups "audit,style"
