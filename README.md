@@ -81,7 +81,9 @@ brew help
 | `czkawka-cli`  |      [Czkawka](https://github.com/qarmin/czkawka)      |   Rust   | ![a](assets/a.svg)![1](assets/1.svg) |
 | `easytier-cli` |            [EasyTier](https://easytier.cn/)            |   Rust   | ![a](assets/a.svg)![1](assets/1.svg) |
 |   `gotmail`    |     [GoTMail](https://github.com/ivaquero/gotmail)     |    Go    | ![a](assets/a.svg)![1](assets/1.svg) |
+|   `hunming`    |     [HunMing](https://github.com/ivaquero/hunming)     |   Rust   | ![a](assets/a.svg)![1](assets/1.svg) |
 |   `json-tui`   | [json-tui](https://github.com/ArthurSonzogni/json-tui) |   C++    | ![a](assets/a.svg)![1](assets/1.svg) |
+|   `kungfig`    |     [KungFig](https://github.com/ivaquero/kungfig)     |   Rust   | ![a](assets/a.svg)![1](assets/1.svg) |
 |   `krokiet`    |      [Czkawka](https://github.com/qarmin/czkawka)      |   Rust   | ![a](assets/a.svg)![1](assets/1.svg) |
 |  `office-cli`  |  [Office CLI](https://github.com/iOfficeAI/OfficeCLI)  |    C#    | ![a](assets/a.svg)![1](assets/1.svg) |
 |    `shiroa`    |   [shiroa](https://github.com/Myriad-Dreamin/shiroa)   |   Rust   | ![a](assets/a.svg)![1](assets/1.svg) |
