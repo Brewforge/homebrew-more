@@ -20,5 +20,5 @@ cask "hunming" do
 
   auto_updates true
 
-    binary "hunming-#{arch}-#{os}/hunming", target: "hunming"
+  binary "hunming-#{arch}-#{os}/hunming", target: "hunming"
 end
