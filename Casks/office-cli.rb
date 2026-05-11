@@ -2,11 +2,11 @@ cask "office-cli" do
   arch arm: "arm64", intel: "x64"
   os macos: "mac", linux: "linux"
 
-  version "1.0.81"
-  sha256 arm:          "beb6fc7e214988682789bb76b4de344b44e20c8ccc6bf4516214b712720f945d",
-         x86_64:       "e4b5dc064a68d2a8f7c3704715b4fc22553ab68bd47c6754823b2c85db245c6d",
-         arm64_linux:  "8e61bbf0ed3f081c6c48c322c1dcdfa6e3220431146bc7a1bc4baab7d98d9bd3",
-         x86_64_linux: "10cafc681214d067405a5e07176ddd5d3aa1720b2107b26edc7a105f1f23a4d0"
+  version "1.0.87"
+  sha256 arm:          "6a790448f0752f300c535cae11e19cbe692db6297fe267c7a60bcdc0f1feb32a",
+         x86_64:       "daf8331c62ac151e505b7013454385e7f4aa72d3a879f6f93802cef034ab8880",
+         arm64_linux:  "46a27aa245ed8678aa254684aabde59dde0e90110b558589274f229a3dbb859c",
+         x86_64_linux: "29685c516f212d0eaf92aca6cc479c225669776103ad76a4abacc8911b195389"
 
   url "https://github.com/iOfficeAI/OfficeCLI/releases/download/v#{version}/officecli-#{os}-#{arch}"
   name "office-cli"
