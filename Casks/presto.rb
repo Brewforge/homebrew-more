@@ -1,9 +1,9 @@
 cask "presto" do
   arch arm: "arm64", intel: "amd64"
 
-  version "0.7.0"
-  sha256 arm:   "24be498de9cbc8bdac0dcad51b1bc8ec1138c04aff28ff3790d9ff56ce7cdd8f",
-         intel: "bb3ba9e91198c472537a7144d4bcc5525caaab0014bc9b1e311b5c4781704848"
+  version "0.8.0"
+  sha256 arm:   "57aceee3f628b640f6a5d192d88b77a810d9641f6086e0257268faafc4fcc8b5",
+         intel: "999fb132ee66b4bb048441d7d49519965368cf3862cfaa299f5112610ac113eb"
 
   url "https://github.com/Presto-io/Presto/releases/download/v#{version}/Presto-#{version}-macOS-#{arch}.dmg",
       verified: "github.com/Presto-io/Presto/"
