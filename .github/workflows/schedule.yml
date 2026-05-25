@@ -32,7 +32,6 @@ jobs:
         with:
           core: false
           cask: false
-          debug: true
 
       - run: brew test-bot --only-tap-syntax
 
@@ -43,7 +42,7 @@ jobs:
 
     strategy:
       matrix:
-        os: [ macos-latest ]
+        os: [macos-latest]
     env:
       HOMEBREW_GITHUB_API_TOKEN: ${{ secrets.HOMEBREW_GITHUB_API_TOKEN }}
     steps:
