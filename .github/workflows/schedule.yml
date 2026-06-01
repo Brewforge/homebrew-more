@@ -34,9 +34,12 @@ jobs:
           cask: false
 
       - name: Clean stale download locks
-        run: rm -f /home/linuxbrew/.cache/Homebrew/downloads/*.incomplete
+        run: |
+          rm -f /home/linuxbrew/.cache/Homebrew/downloads/*.incomplete
+          rm -rf $(brew --cache)/api-source
 
-      - run: brew test-bot --only-tap-syntax
+      - name: Test
+        run: brew test-bot --only-tap-syntax
 
   bump-cli:
     name: Bump cli
