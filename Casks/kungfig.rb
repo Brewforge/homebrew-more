@@ -18,7 +18,6 @@ cask "kungfig" do
     strategy :github_latest
   end
 
-  auto_updates true
 
   binary "kungfig"
 end

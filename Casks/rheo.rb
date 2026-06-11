@@ -19,7 +19,6 @@ cask "rheo" do
     strategy :github_latest
   end
 
-  auto_updates true
 
   binary "rheo-#{arch}-#{os}/rheo", target: "rheo"
 end

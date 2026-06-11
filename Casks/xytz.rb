@@ -18,7 +18,6 @@ cask "xytz" do
     strategy :github_latest
   end
 
-  auto_updates true
 
   binary "xytz"
 end

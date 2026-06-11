@@ -18,7 +18,6 @@ cask "gotmail" do
     strategy :github_latest
   end
 
-  auto_updates true
 
   binary "gotmail"
 end

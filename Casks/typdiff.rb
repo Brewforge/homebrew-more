@@ -18,7 +18,6 @@ cask "typdiff" do
     strategy :github_latest
   end
 
-  auto_updates true
 
   binary "typdiff-#{arch}-#{os}/typdiff", target: "typdiff"
 end

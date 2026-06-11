@@ -18,7 +18,6 @@ cask "ticker" do
     strategy :github_latest
   end
 
-  auto_updates true
 
   binary "ticker"
 end

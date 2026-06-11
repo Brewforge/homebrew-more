@@ -19,7 +19,6 @@ cask "biliup" do
     strategy :github_latest
   end
 
-  auto_updates true
 
   binary "biliupR-v#{version}-#{arch}-#{os}/biliup", target: "biliup"
 end

@@ -18,7 +18,6 @@ cask "krokiet" do
     strategy :github_latest
   end
 
-  auto_updates true
   conflicts_with cask: "brewforge/more/czkawka-cli"
 
   binary "#{os}_krokiet_#{arch}", target: "krokiet"

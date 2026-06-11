@@ -18,7 +18,6 @@ cask "shiroa" do
     strategy :github_latest
   end
 
-  auto_updates true
 
   binary "shiroa-#{arch}-#{os}/shiroa", target: "shiroa"
 end

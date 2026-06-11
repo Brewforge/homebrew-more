@@ -19,7 +19,6 @@ cask "easytier-cli" do
     strategy :github_latest
   end
 
-  auto_updates true
 
   binary "easytier-#{os}-#{arch}/easytier-cli"
   binary "easytier-#{os}-#{arch}/easytier-core"

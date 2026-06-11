@@ -18,7 +18,6 @@ cask "hunming" do
     strategy :github_latest
   end
 
-  auto_updates true
 
   binary "hunming"
 end
