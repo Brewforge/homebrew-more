@@ -2,11 +2,11 @@ cask "xytz" do
   arch arm: "arm64", intel: "amd64"
   os macos: "darwin", linux: "linux"
 
-  version "0.8.9"
-  sha256 arm:          "cdef4262eba2db356d6dc47943268083761801c32a7eb8c7b4e4b7e803307c61",
-         x86_64:       "576ce8961dff017816a0cb238af3bc7a3b1d419dcfa09263fa3c6420e1e2ff39",
-         arm64_linux:  "e718562f433d1e72d4f0ee35f33291ed61da133e585c978c25152425c00973a5",
-         x86_64_linux: "bfa5b00c37018efb41fa957416a7cb38597ce7fc6753092b4e85ad2ffb38e990"
+  version "0.9.0"
+  sha256 arm:          "85b1d3ecc8e769b2dfd24d537ff84e26593fa9e6aeb94f69b96488d2005f5be1",
+         x86_64:       "e20c43e5fcc6ac82493d85368e16e91461b1bf49a922afad83287a7b352fa1bc",
+         arm64_linux:  "872716ded92b0391c51342b9bf342c812d38124ba5fbf33d6fde171dcaf51730",
+         x86_64_linux: "78922ab0ba2d3cd687238976aa9df09f88a05c166b4d708f040a3423fe29bc5e"
 
   url "https://github.com/xdagiz/xytz/releases/download/v#{version}/xytz-v#{version}-#{os}-#{arch}.tar.gz"
   name "xytz"
@@ -17,7 +17,6 @@ cask "xytz" do
     url :url
     strategy :github_latest
   end
-
 
   binary "xytz"
 end
