@@ -1,5 +1,5 @@
 cask "krokiet" do
-  arch arm: "arm64", intel: "x86_64"
+  arch arm: "arm64", intel: "arm64"
   os macos: "mac", linux: "linux"
 
   version "11.0.1"
