@@ -2,11 +2,11 @@ cask "biliup" do
   arch arm: "aarch64", intel: "x86_64"
   os macos: "macos", linux: "linux"
 
-  version "1.2.1"
-  sha256 arm:          "e013ec98bf534c7c06a52c684b9d6a1255f2ed6b1f6fcbc2dbeba47eff54af45",
-         x86_64:       "f688aebfc11496d995fec7f0d7a05c08ebd21b77cdec66e316508459aa77df36",
-         arm64_linux:  "a80f72e2661128106f6b9496d0482d7f5a02ad0c80f69773a8c2406856012d1e",
-         x86_64_linux: "81c974c7b9a7c489a143b8f0d482ac30788e8dd3e12e75d76609663350741f05"
+  version "1.2.2"
+  sha256 arm:          "9024475ed37c6e3c15a4da5c47983e2b764863bde42f9424dbd468f7dc169e6e",
+         x86_64:       "f33106c5228ea7817c4618f36d8bbad54f3af978c0a42291bc24ae33758e1eeb",
+         arm64_linux:  "58aed378ef8d4f588113e0da4fe1423ef74ebdc5ed5d40d77a908eed81f87487",
+         x86_64_linux: "2d257da5131e55157d6aad82cd6f30c6fdc971bf6fcee8741fc5539fca65903a"
 
   url "https://github.com/biliup/biliup/releases/download/v#{version}/biliupR-v#{version}-#{arch}-#{os}.tar.xz",
       verified: "github.com/biliup/biliup/"
@@ -18,7 +18,6 @@ cask "biliup" do
     url :url
     strategy :github_latest
   end
-
 
   binary "biliupR-v#{version}-#{arch}-#{os}/biliup", target: "biliup"
 end
