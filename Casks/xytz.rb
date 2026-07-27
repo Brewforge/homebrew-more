@@ -2,11 +2,11 @@ cask "xytz" do
   arch arm: "arm64", intel: "amd64"
   os macos: "darwin", linux: "linux"
 
-  version "0.9.1"
-  sha256 arm:          "958f4b696ad2a5d11537b5c1205683ca778420c00f067065e1ef6278718a3907",
-         x86_64:       "df7add25d04ad13a2dd0ee7f69cc93ef0855114bb928efc0947d9bcfa871d3d5",
-         arm64_linux:  "b107ec4d8aa1977f8eb6a388f5e6f7e438d84c08584d0cab38ca75e37d580f52",
-         x86_64_linux: "a6ea0f6e81d3d38b99207765d85ed154d16ab450acff5a61ad5d5e8a9aeb2f48"
+  version "0.9.2"
+  sha256 arm:          "315ae245b1ed3264a4fbe1453217e5da178f138c01ceddac34bcd6eaddd08bc6",
+         x86_64:       "675652e74f06a3f991c0c4afc742b520a3b1b6d3adcac0cdd07f292e399df3d2",
+         arm64_linux:  "058799df46e69f84c3506038280c03a63a690cdc3c8bd4def7162d70db3b37a2",
+         x86_64_linux: "2d1a1ced7c2eac8c37d3c1359685e390d8646afd24b03c1b996135f8c113b02a"
 
   url "https://github.com/xdagiz/xytz/releases/download/v#{version}/xytz-v#{version}-#{os}-#{arch}.tar.gz"
   name "xytz"
