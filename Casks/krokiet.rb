@@ -2,11 +2,11 @@ cask "krokiet" do
   arch arm: "arm64", intel: "arm64"
   os macos: "mac", linux: "linux"
 
-  version "12.0.0"
-  sha256 arm:          "09adbb733bdfb7444c4d1c3cb6ea5c1663f3ac63def9f639e74bf4eccb87fbaa",
-         x86_64:       "09adbb733bdfb7444c4d1c3cb6ea5c1663f3ac63def9f639e74bf4eccb87fbaa",
-         arm64_linux:  "d0de7c036c7a642d54fc19f294c027913b77161a58f1c3ca1ad995b11377ea4c",
-         x86_64_linux: "d0de7c036c7a642d54fc19f294c027913b77161a58f1c3ca1ad995b11377ea4c"
+  version "12.0.1"
+  sha256 arm:          "77e7420ce04f6e6aa01f9c509f800d8921beb361128ccfcbe9def3aa401fbf9b",
+         x86_64:       "77e7420ce04f6e6aa01f9c509f800d8921beb361128ccfcbe9def3aa401fbf9b",
+         arm64_linux:  "170b252fb007a2a18d16b0162c8c118f192e111f959585bea4f683ceddb6d3df",
+         x86_64_linux: "170b252fb007a2a18d16b0162c8c118f192e111f959585bea4f683ceddb6d3df"
 
   url "https://github.com/qarmin/czkawka/releases/download/#{version}/#{os}_krokiet_#{arch}"
   name "Krokiet"
