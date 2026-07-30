@@ -63,13 +63,15 @@ brew help
 
 ### Formulae
 
-| Formula Name  |                      Site                      | Language |                 Note                 |
-| :-----------: | :--------------------------------------------: | :------: | :----------------------------------: |
-|  `easytier`   |        [EasyTier](https://easytier.cn/)        |   Rust   | ![a](assets/a.svg)![1](assets/1.svg) |
-|   `makemf`    |   [MakeMF](https://github.com/Mrered/Gobin)    |    Go    | ![a](assets/a.svg)![1](assets/1.svg) |
-| `ollamaplist` | [OllamaPlist](https://github.com/Mrered/Gobin) |    Go    | ![a](assets/a.svg)![1](assets/1.svg) |
-|  `reportgen`  |  [reportgen](https://github.com/Mrered/Gobin)  |    Go    | ![a](assets/a.svg)![1](assets/1.svg) |
-|    `shurl`    |   [ShURL](https://github.com/Mrered/yourlsh)   |  Shell   | ![a](assets/a.svg)![1](assets/1.svg) |
+| Formula Name  |                      Site                               | Language |                 Note                 |
+| :-----------: | :-----------------------------------------------------: | :------: | :----------------------------------: |
+|  `chapose`    |[ChaCrypt](https://github.com/huanguan1978/chacrypt)     |   Dart   | ![a](assets/a.svg)![1](assets/1.svg) |
+|  `easytier`   |        [EasyTier](https://easytier.cn/)                 |   Rust   | ![a](assets/a.svg)![1](assets/1.svg) |
+|  `ft`         |[FileTools](https://github.com/huanguan1978/ft)          |   Dart   | ![a](assets/a.svg)![1](assets/1.svg) |
+|   `makemf`    |   [MakeMF](https://github.com/Mrered/Gobin)             |    Go    | ![a](assets/a.svg)![1](assets/1.svg) |
+| `ollamaplist` | [OllamaPlist](https://github.com/Mrered/Gobin)          |    Go    | ![a](assets/a.svg)![1](assets/1.svg) |
+|  `reportgen`  |  [reportgen](https://github.com/Mrered/Gobin)           |    Go    | ![a](assets/a.svg)![1](assets/1.svg) |
+|    `shurl`    |   [ShURL](https://github.com/Mrered/yourlsh)            |  Shell   | ![a](assets/a.svg)![1](assets/1.svg) |
 
 ### Casks
 
@@ -78,6 +80,7 @@ brew help
 |    `bbdown`    |      [BBDown](https://github.com/nilaoda/BBDown)       |    C#    | ![a](assets/a.svg)![1](assets/1.svg) |
 |    `biliup`    |       [biliup](https://biliup.github.io/biliup/)       |   Rust   | ![a](assets/a.svg)![1](assets/1.svg) |
 | `easytier-cli` |            [EasyTier](https://easytier.cn/)            |   Rust   | ![a](assets/a.svg)![1](assets/1.svg) |
+| `ft-cli`       |     [FileTools](https://github.com/huanguan1978/ft)    |   Dart   | ![a](assets/a.svg)![1](assets/1.svg) |
 |   `gotmail`    |     [GoTMail](https://github.com/ivaquero/gotmail)     |    Go    | ![a](assets/a.svg)![1](assets/1.svg) |
 |   `hunming`    |     [HunMing](https://github.com/ivaquero/hunming)     |   Rust   | ![a](assets/a.svg)![1](assets/1.svg) |
 |   `json-tui`   | [json-tui](https://github.com/ArthurSonzogni/json-tui) |   C++    | ![a](assets/a.svg)![1](assets/1.svg) |
