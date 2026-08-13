@@ -20,7 +20,7 @@ class DeepseekHarness < Formula
   def install
     # The CLI and its first-party plugin packages are released together.
     # Keep Homebrew's release cooldown for all other npm dependencies.
-    system "npm", "install", *std_npm_args,
+    system "npm", "install", *std_npm_args(ignore_scripts: false),
            "--min-release-age-exclude=@deepseek-ai/*"
     bin.install_symlink libexec.glob("bin/*")
   end
@@ -28,5 +28,23 @@ class DeepseekHarness < Formula
   test do
     assert_match version.to_s, shell_output("#{bin}/dsh --version")
     assert_match "boot a DeepSeek Harness profile", shell_output("#{bin}/dsh --help")
+
+    node_pty = libexec/"lib/node_modules/@deepseek-ai/dsh/node_modules/node-pty"
+    (testpath/"pty-test.cjs").write <<~JAVASCRIPT
+      const pty = require(#{node_pty.to_s.dump});
+      const child = pty.spawn("/bin/sh", ["-c", "printf dsh-pty-ok"]);
+      let output = "";
+      child.onData(data => output += data);
+      child.onExit(({ exitCode }) => {
+        process.stdout.write(output);
+        process.exit(exitCode);
+      });
+    JAVASCRIPT
+    assert_match "dsh-pty-ok", shell_output("#{formula_opt_bin("node")}/node pty-test.cjs")
+
+    ENV["DSH_HOME"] = testpath
+    output = shell_output("#{bin}/dsh plugin --profile test --version 2>&1")
+    assert_match Formula["pnpm"].version.to_s, output
+    assert_path_exists testpath/"profiles/test/package.json"
   end
 end
