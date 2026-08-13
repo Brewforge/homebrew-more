@@ -15,6 +15,10 @@ class DeepseekHarness < Formula
   depends_on "node"
   depends_on "pnpm"
 
+  on_linux do
+    depends_on "python@3.14" => :build
+  end
+
   conflicts_with "dsh", because: "both install a `dsh` executable"
 
   def install
@@ -23,6 +27,9 @@ class DeepseekHarness < Formula
     system "npm", "install", *std_npm_args(ignore_scripts: false),
            "--min-release-age-exclude=@deepseek-ai/*"
     bin.install_symlink libexec.glob("bin/*")
+
+    node_modules = libexec/"lib/node_modules/@deepseek-ai/dsh/node_modules"
+    rm_r node_modules/"node-pty/third_party"
   end
 
   test do
@@ -41,6 +48,13 @@ class DeepseekHarness < Formula
       });
     JAVASCRIPT
     assert_match "dsh-pty-ok", shell_output("#{formula_opt_bin("node")}/node pty-test.cjs")
+
+    (testpath/"native-modules-test.cjs").write <<~JAVASCRIPT
+      require(#{(node_pty.parent/"koffi").to_s.dump});
+      require(#{(node_pty.parent/"sharp").to_s.dump});
+      require(#{(node_pty.parent/"node-addon-require-builtin").to_s.dump});
+    JAVASCRIPT
+    system formula_opt_bin("node")/"node", "native-modules-test.cjs"
 
     ENV["DSH_HOME"] = testpath
     output = shell_output("#{bin}/dsh plugin --profile test --version 2>&1")
