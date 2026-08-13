@@ -66,6 +66,7 @@ brew help
 | Formula Name  |                      Site                               | Language |                 Note                 |
 | :-----------: | :-----------------------------------------------------: | :------: | :----------------------------------: |
 |  `chapose`    |[ChaCrypt](https://github.com/huanguan1978/chacrypt)     |   Dart   | ![a](assets/a.svg)![1](assets/1.svg) |
+| `deepseek-harness` | [DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness) | TypeScript | ![a](assets/a.svg)![1](assets/1.svg) |
 |  `easytier`   |        [EasyTier](https://easytier.cn/)                 |   Rust   | ![a](assets/a.svg)![1](assets/1.svg) |
 |  `ft`         |[FileTools](https://github.com/huanguan1978/ft)          |   Dart   | ![a](assets/a.svg)![1](assets/1.svg) |
 |   `makemf`    |   [MakeMF](https://github.com/Mrered/Gobin)             |    Go    | ![a](assets/a.svg)![1](assets/1.svg) |
