@@ -8,8 +8,7 @@ cask "rheo" do
          arm64_linux:  "84f8500800cb938c1bba8173885e190444d19b4f4a028261a6a478b6e5ef747d",
          x86_64_linux: "84f8500800cb938c1bba8173885e190444d19b4f4a028261a6a478b6e5ef747d"
 
-  url "https://github.com/freecomputinglab/rheo/releases/download/v#{version}/rheo-#{arch}-#{os}.zip",
-      verified: "github.com/freecomputinglab/rheo/"
+  url "https://github.com/freecomputinglab/rheo/releases/download/v#{version}/rheo-#{arch}-#{os}.zip"
   name "rheo"
   desc "Typesetting and static site engine based on Typst"
   homepage "https://rheo.ohrg.org/"
