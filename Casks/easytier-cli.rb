@@ -8,8 +8,7 @@ cask "easytier-cli" do
          arm64_linux:  "f533ec25a7ea714e09f645615012200278058525795cc3bb690ff011aec1a70f",
          x86_64_linux: "61b659eaedba658fa66fe47d17e1426cdd77e5d02fa15fed447bb4357c09dfd6"
 
-  url "https://github.com/EasyTier/EasyTier/releases/download/v#{version}/easytier-#{os}-#{arch}-v#{version}.zip",
-      verified: "github.com/EasyTier/EasyTier/"
+  url "https://github.com/EasyTier/EasyTier/releases/download/v#{version}/easytier-#{os}-#{arch}-v#{version}.zip"
   name "EasyTier"
   desc "Simple, decentralized mesh VPN with WireGuard support"
   homepage "https://easytier.cn/"
@@ -18,7 +17,6 @@ cask "easytier-cli" do
     url :url
     strategy :github_latest
   end
-
 
   binary "easytier-#{os}-#{arch}/easytier-cli"
   binary "easytier-#{os}-#{arch}/easytier-core"
