@@ -1,8 +1,8 @@
 class DeepseekHarness < Formula
   desc "Composable agent harness where everything is a plugin"
   homepage "https://github.com/deepseek-ai/deepseek-harness"
-  url "https://registry.npmjs.org/@deepseek-ai/dsh/-/dsh-0.1.5-rc.1.tgz"
-  sha256 "1a79719f1c763918ac30e8194df783a9330c6b12d5f04c950731a3f8a1c3d9d0"
+  url "https://registry.npmjs.org/@deepseek-ai/dsh/-/dsh-0.1.5-rc.2.tgz"
+  sha256 "f4c54839d69e82bf1c3a5a41a910c3ce1405cd9e9d97d753c0c04f406c7d7480"
   license "MIT"
 
   livecheck do
