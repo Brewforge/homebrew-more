@@ -2,11 +2,11 @@ cask "rheo" do
   arch arm: "aarch64", intel: "x86_64"
   os macos: "apple-darwin", linux: "unknown-linux-gnu"
 
-  version "0.6.3"
-  sha256 arm:          "02fdf2aa3f0f98485281dd4b7ae443de62a8521b57b4f1780f7f5158b2d6fcdd",
-         x86_64:       "02fdf2aa3f0f98485281dd4b7ae443de62a8521b57b4f1780f7f5158b2d6fcdd",
-         arm64_linux:  "7cfec6158b64ce5025851bd0d5248e7ad3a86b06ffe48f0bb155beea358819f6",
-         x86_64_linux: "7cfec6158b64ce5025851bd0d5248e7ad3a86b06ffe48f0bb155beea358819f6"
+  version "0.6.4"
+  sha256 arm:          "e13eb4fb33cd88376d071e3a288da1caa4e9e659d9328a69a845d5beab94f995",
+         x86_64:       "e13eb4fb33cd88376d071e3a288da1caa4e9e659d9328a69a845d5beab94f995",
+         arm64_linux:  "000403ca68439b1aa8351a9a06ed95d9e43f4572071020712b45dc97ea1bf723",
+         x86_64_linux: "000403ca68439b1aa8351a9a06ed95d9e43f4572071020712b45dc97ea1bf723"
 
   url "https://github.com/freecomputinglab/rheo/releases/download/v#{version}/rheo-#{arch}-#{os}.zip"
   name "rheo"
