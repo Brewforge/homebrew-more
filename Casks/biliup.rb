@@ -2,11 +2,11 @@ cask "biliup" do
   arch arm: "aarch64", intel: "x86_64"
   os macos: "macos", linux: "linux"
 
-  version "1.2.4"
-  sha256 arm:          "f2341fbb2c95be4f0934d070d13e3891ff83a68fa35c20bcebc5518bee7cf15b",
-         x86_64:       "3da265358b84aff2497936cad0fdeec718987b1b955fd1a04637c145e824f1d2",
-         arm64_linux:  "902b4e45f1b1e5b097b598c420c256c1378c7d5fbbd079291e77a472d8e0667e",
-         x86_64_linux: "428e3365357d495884111787bf27f10c6abc8d981502f336acf542e7361dae0e"
+  version "1.2.5"
+  sha256 arm:          "4aac070b0cf9e1e2b2006f078be68c7bf67a1c4268d32fcb06f0752914a0557e",
+         x86_64:       "5fe62e201783d1513a5419960214ca8a2d80330b54b05edf6e0c244eba80ea3e",
+         arm64_linux:  "707d58e546f01356abfd0325106a5580eaa0eeb9caa847f334beb1a7dde54d39",
+         x86_64_linux: "a77213a9d8786e95ddc90acb2b597d06160671f2a7ff6f7d7a920d64c143625a"
 
   url "https://github.com/biliup/biliup/releases/download/v#{version}/biliupR-v#{version}-#{arch}-#{os}.tar.xz"
   name "biliupR"
