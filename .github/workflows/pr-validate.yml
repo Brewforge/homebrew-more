@@ -37,8 +37,33 @@ jobs:
           core: false
           cask: false
 
-      # `brew style` takes paths, `brew fetch`/`brew audit` take tap-qualified
-      # names, so both shapes are collected from the same diff against the PR base.
+      # `setup-homebrew` already taps this checkout and trusts it, which is what
+      # makes the tap-qualified names below resolve. Assert that instead of
+      # re-tapping, so the action's own cleanup keeps working.
+      - name: Check the tap resolves to this checkout
+        run: |
+          set -euo pipefail
+          tap="$(brew --repository brewforge/more)"
+          echo "brewforge/more -> $tap"
+          test -d "$tap/Formula" -o -d "$tap/Casks"
+
+      # The whole tap, not just the changed files: `brew audit` only sees
+      # collisions between a new entry and an existing one when it runs over all
+      # of them. These are the checks `brew test-bot --only-tap-syntax` runs,
+      # spelled out because test-bot silently no-ops when the tap it runs in is
+      # the symlink `setup-homebrew` creates (Tap.from_path does not resolve it).
+      - name: Tap syntax
+        run: |
+          set -euo pipefail
+          brew style brewforge/more
+          brew readall --aliases --os=all --arch=all brewforge/more
+          # `version` is excepted because a formula whose per-arch URLs
+          # interpolate `#{version}` makes the explicit `version` look redundant
+          # (see Formula/openresearch-cli.rb). Every other audit check applies.
+          brew audit --except=installed,version --tap=brewforge/more
+
+      # `brew style` takes paths, `brew fetch`/`brew install` take tap-qualified
+      # names, so both shapes are collected from the same diff against the base.
       - name: Detect changed formulae and casks
         id: changed
         run: |
@@ -50,9 +75,6 @@ jobs:
           echo "Changed files:"
           printf '%s\n' "$files"
           {
-            echo "files<<FILES_EOF"
-            printf '%s\n' "$files"
-            echo "FILES_EOF"
             echo "formulae<<FORMULAE_EOF"
             printf '%s\n' "$formulae"
             echo "FORMULAE_EOF"
@@ -60,29 +82,6 @@ jobs:
             printf '%s\n' "$casks"
             echo "CASKS_EOF"
           } >> "$GITHUB_OUTPUT"
-
-      - name: Brew style
-        env:
-          FILES: ${{ steps.changed.outputs.files }}
-        run: |
-          set -euo pipefail
-          if [ -z "${FILES//$'\n'/}" ]; then
-            echo "No formula or cask files changed."
-            exit 0
-          fi
-          # Paths never contain whitespace; the split is intended.
-          # shellcheck disable=SC2086
-          brew style $FILES
-
-      # `setup-homebrew` already taps this checkout and trusts it, which is what
-      # makes the `brew fetch` and `brew audit` names below resolve. Assert that
-      # instead of re-tapping, so the action's own cleanup keeps working.
-      - name: Check the tap resolves to this checkout
-        run: |
-          set -euo pipefail
-          tap="$(brew --repository brewforge/more)"
-          echo "brewforge/more -> $tap"
-          test -d "$tap/Formula" -o -d "$tap/Casks"
 
       # Blocking: proves the URL of every changed entry resolves and that its
       # sha256 still matches the uploaded artifact, which is what bump PRs break.
@@ -122,24 +121,4 @@ jobs:
           # shellcheck disable=SC2086
           for cask in $CASKS; do
             brew install --cask "brewforge/more/$cask"
-          done
-
-      # Advisory: `brew audit` reports issues this tap knowingly keeps (for
-      # example the explicit `version` in a formula whose per-arch URLs
-      # interpolate it), so it annotates the PR instead of blocking it.
-      - name: Brew audit
-        continue-on-error: true
-        env:
-          FORMULAE: ${{ steps.changed.outputs.formulae }}
-          CASKS: ${{ steps.changed.outputs.casks }}
-        run: |
-          set -euo pipefail
-          # Tokens never contain whitespace; the splits are intended.
-          # shellcheck disable=SC2086
-          for formula in $FORMULAE; do
-            brew audit --formula "brewforge/more/$formula"
-          done
-          # shellcheck disable=SC2086
-          for cask in $CASKS; do
-            brew audit --cask "brewforge/more/$cask"
           done
