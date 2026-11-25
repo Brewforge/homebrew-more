@@ -1,4 +1,4 @@
-class DeepseekHarness < Formula
+class DeepseekHarnessCli < Formula
   desc "Composable agent harness where everything is a plugin"
   homepage "https://github.com/deepseek-ai/deepseek-harness"
   url "https://registry.npmjs.org/@deepseek-ai/dsh/-/dsh-0.2.2-rc.5.tgz"
@@ -20,6 +20,14 @@ class DeepseekHarness < Formula
   end
 
   conflicts_with "dsh", because: "both install a `dsh` executable"
+
+  # The npm tree ships Mach-O files (@deepseek-ai/libreoffice-kit's
+  # frame-forwarding.node, @koromix/koffi, sherpa-onnx, sharp's libvips) whose
+  # only install id is `@rpath/...` and whose headers have no padding for the
+  # longer `/opt/homebrew/opt/...` id Homebrew would write. Rewriting them dies
+  # with MachO::HeaderPadError and, on current Homebrew, fails the install
+  # outright. Keep the ids the packages were tested with.
+  preserve_rpath
 
   def install
     # The CLI and its first-party plugin packages are released together.
@@ -63,6 +71,10 @@ class DeepseekHarness < Formula
     system formula_opt_bin("node")/"node", "native-modules-test.cjs"
 
     ENV["DSH_HOME"] = testpath
+    # `dsh plugin` shells out to `pnpm` on PATH, so a developer's own pnpm (corepack,
+    # fnm, ...) decides what this prints. Put the dependency's bin first so the
+    # assertion is about this formula rather than about the caller's PATH order.
+    ENV.prepend_path "PATH", formula_opt_bin("pnpm")
     output = shell_output("#{bin}/dsh plugin --profile test --version 2>&1")
     assert_match Formula["pnpm"].version.to_s, output
     assert_path_exists testpath/"profiles/test/package.json"
