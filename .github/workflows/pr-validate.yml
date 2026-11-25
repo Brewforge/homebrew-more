@@ -74,16 +74,15 @@ jobs:
           # shellcheck disable=SC2086
           brew style $FILES
 
-      # The tap has to be loadable by name for `brew fetch` and `brew audit`.
-      - name: Tap this checkout
+      # `setup-homebrew` already taps this checkout and trusts it, which is what
+      # makes the `brew fetch` and `brew audit` names below resolve. Assert that
+      # instead of re-tapping, so the action's own cleanup keeps working.
+      - name: Check the tap resolves to this checkout
         run: |
           set -euo pipefail
-          tap="$(brew --repository)/Library/Taps/brewforge/homebrew-more"
-          rm -rf "$tap"
-          mkdir -p "$(dirname "$tap")"
-          rsync -a --exclude=.git ./ "$tap/"
-          # Homebrew 7 refuses to load formulae and casks from an untrusted tap.
-          brew trust brewforge/more || true
+          tap="$(brew --repository brewforge/more)"
+          echo "brewforge/more -> $tap"
+          test -d "$tap/Formula" -o -d "$tap/Casks"
 
       # Blocking: proves the URL of every changed entry resolves and that its
       # sha256 still matches the uploaded artifact, which is what bump PRs break.
