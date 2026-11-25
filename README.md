@@ -71,6 +71,7 @@ brew help
 |  `ft`         |[FileTools](https://github.com/huanguan1978/ft)          |   Dart   | ![a](assets/a.svg)![1](assets/1.svg) |
 |   `makemf`    |   [MakeMF](https://github.com/Mrered/Gobin)             |    Go    | ![a](assets/a.svg)![1](assets/1.svg) |
 | `ollamaplist` | [OllamaPlist](https://github.com/Mrered/Gobin)          |    Go    | ![a](assets/a.svg)![1](assets/1.svg) |
+| `openresearch-cli` | [OpenResearch](https://github.com/alphaXiv/OpenResearch) |   Rust   | ![a](assets/a.svg)![1](assets/1.svg) |
 |  `reportgen`  |  [reportgen](https://github.com/Mrered/Gobin)           |    Go    | ![a](assets/a.svg)![1](assets/1.svg) |
 |    `shurl`    |   [ShURL](https://github.com/Mrered/yourlsh)            |  Shell   | ![a](assets/a.svg)![1](assets/1.svg) |
 
@@ -87,6 +88,7 @@ brew help
 |   `json-tui`   | [json-tui](https://github.com/ArthurSonzogni/json-tui) |   C++    | ![a](assets/a.svg)![1](assets/1.svg) |
 |   `kungfig`    |     [KungFig](https://github.com/ivaquero/kungfig)     |   Rust   | ![a](assets/a.svg)![1](assets/1.svg) |
 |   `krokiet`    |      [Czkawka](https://github.com/qarmin/czkawka)      |   Rust   | ![a](assets/a.svg)![1](assets/1.svg) |
+| `openresearch` | [OpenResearch](https://openresearch.sh/)               |   Rust   | ![a](assets/a.svg)![1](assets/1.svg) |
 |    `shiroa`    |   [shiroa](https://github.com/Myriad-Dreamin/shiroa)   |   Rust   | ![a](assets/a.svg)![1](assets/1.svg) |
 |    `ticker`    |   [ticker](https://github.com/achannarasappa/ticker)   |    Go    | ![a](assets/a.svg)![1](assets/1.svg) |
 |   `typdiff`    |     [typdiff](https://github.com/sou1118/typdiff)      |   Rust   | ![a](assets/a.svg)![1](assets/1.svg) |
