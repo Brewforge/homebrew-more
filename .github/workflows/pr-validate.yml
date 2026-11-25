@@ -103,6 +103,27 @@ jobs:
             brew fetch --cask --retry "brewforge/more/$cask"
           done
 
+      # Blocking, and the only check that closes the gap left by fetch/audit: a
+      # tarball whose root directory is named differently than `install` expects
+      # (or a renamed binary) passes both and only fails here. `brew test` runs
+      # the formula's own smoke test; casks have none.
+      - name: Install and test
+        env:
+          FORMULAE: ${{ steps.changed.outputs.formulae }}
+          CASKS: ${{ steps.changed.outputs.casks }}
+        run: |
+          set -euo pipefail
+          # Tokens never contain whitespace; the splits are intended.
+          # shellcheck disable=SC2086
+          for formula in $FORMULAE; do
+            brew install --formula "brewforge/more/$formula"
+            brew test "brewforge/more/$formula"
+          done
+          # shellcheck disable=SC2086
+          for cask in $CASKS; do
+            brew install --cask "brewforge/more/$cask"
+          done
+
       # Advisory: `brew audit` reports issues this tap knowingly keeps (for
       # example the explicit `version` in a formula whose per-arch URLs
       # interpolate it), so it annotates the PR instead of blocking it.
