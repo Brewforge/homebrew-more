@@ -18,6 +18,5 @@ cask "gotmail" do
     strategy :github_latest
   end
 
-
   binary "gotmail"
 end

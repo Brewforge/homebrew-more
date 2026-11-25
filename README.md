@@ -84,9 +84,7 @@ brew help
 | `easytier-cli` |            [EasyTier](https://easytier.cn/)            |   Rust   | ![a](assets/a.svg)![1](assets/1.svg) |
 | `ft-cli`       |     [FileTools](https://github.com/huanguan1978/ft)    |   Dart   | ![a](assets/a.svg)![1](assets/1.svg) |
 |   `gotmail`    |     [GoTMail](https://github.com/ivaquero/gotmail)     |    Go    | ![a](assets/a.svg)![1](assets/1.svg) |
-|   `hunming`    |     [HunMing](https://github.com/ivaquero/hunming)     |   Rust   | ![a](assets/a.svg)![1](assets/1.svg) |
 |   `json-tui`   | [json-tui](https://github.com/ArthurSonzogni/json-tui) |   C++    | ![a](assets/a.svg)![1](assets/1.svg) |
-|   `kungfig`    |     [KungFig](https://github.com/ivaquero/kungfig)     |   Rust   | ![a](assets/a.svg)![1](assets/1.svg) |
 |   `krokiet`    |      [Czkawka](https://github.com/qarmin/czkawka)      |   Rust   | ![a](assets/a.svg)![1](assets/1.svg) |
 | `openresearch` | [OpenResearch](https://openresearch.sh/)               |   Rust   | ![a](assets/a.svg)![1](assets/1.svg) |
 |    `shiroa`    |   [shiroa](https://github.com/Myriad-Dreamin/shiroa)   |   Rust   | ![a](assets/a.svg)![1](assets/1.svg) |

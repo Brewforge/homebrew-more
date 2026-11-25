@@ -37,52 +37,69 @@ jobs:
           core: false
           cask: false
 
-      # `brew style` takes paths, `brew fetch`/`brew audit` take tap-qualified
-      # names, so both shapes are collected from the same diff against the PR base.
-      - name: Detect changed formulae and casks
-        id: changed
-        run: |
-          set -euo pipefail
-          base="origin/${GITHUB_BASE_REF:-main}"
-          files=$(git diff --name-only --diff-filter=ACMR "$base...HEAD" -- Casks Formula | sort -u)
-          formulae=$(printf '%s\n' "$files" | sed -n 's|^Formula/\([^/]*\)\.rb$|\1|p')
-          casks=$(printf '%s\n' "$files" | sed -n 's|^Casks/\([^/]*\)\.rb$|\1|p')
-          echo "Changed files:"
-          printf '%s\n' "$files"
-          {
-            echo "files<<FILES_EOF"
-            printf '%s\n' "$files"
-            echo "FILES_EOF"
-            echo "formulae<<FORMULAE_EOF"
-            printf '%s\n' "$formulae"
-            echo "FORMULAE_EOF"
-            echo "casks<<CASKS_EOF"
-            printf '%s\n' "$casks"
-            echo "CASKS_EOF"
-          } >> "$GITHUB_OUTPUT"
-
-      - name: Brew style
-        env:
-          FILES: ${{ steps.changed.outputs.files }}
-        run: |
-          set -euo pipefail
-          if [ -z "${FILES//$'\n'/}" ]; then
-            echo "No formula or cask files changed."
-            exit 0
-          fi
-          # Paths never contain whitespace; the split is intended.
-          # shellcheck disable=SC2086
-          brew style $FILES
-
       # `setup-homebrew` already taps this checkout and trusts it, which is what
-      # makes the `brew fetch` and `brew audit` names below resolve. Assert that
-      # instead of re-tapping, so the action's own cleanup keeps working.
+      # makes the tap-qualified names below resolve. Assert that instead of
+      # re-tapping, so the action's own cleanup keeps working.
       - name: Check the tap resolves to this checkout
         run: |
           set -euo pipefail
           tap="$(brew --repository brewforge/more)"
           echo "brewforge/more -> $tap"
           test -d "$tap/Formula" -o -d "$tap/Casks"
+
+      # The whole tap, not just the changed files: `brew audit` only sees
+      # collisions between a new entry and an existing one when it runs over all
+      # of them. These are the checks `brew test-bot --only-tap-syntax` runs,
+      # spelled out because test-bot silently no-ops when the tap it runs in is
+      # the symlink `setup-homebrew` creates (Tap.from_path does not resolve it).
+      - name: Tap syntax
+        run: |
+          set -euo pipefail
+          brew style brewforge/more
+          brew readall --aliases --os=all --arch=all brewforge/more
+          # `version` is excepted because a formula whose per-arch URLs
+          # interpolate `#{version}` makes the explicit `version` look redundant
+          # (see Formula/openresearch-cli.rb). Every other audit check applies.
+          brew audit --except=installed,version --tap=brewforge/more
+
+      # Two lists come out of the diff against the base branch: every entry the
+      # PR touches (fetched, cheap, catches a dead upstream URL) and the subset
+      # whose download metadata changed (installed, expensive, pull the whole
+      # dependency tree in). A style-only edit must not reinstall a formula.
+      - name: Detect changed entries
+        id: changed
+        run: |
+          set -euo pipefail
+          base="origin/${GITHUB_BASE_REF:-main}"
+          files=$(git diff --name-only --diff-filter=ACMR "$base...HEAD" -- Casks Formula | sort -u)
+          echo "Changed files:"
+          printf '%s\n' "$files"
+          formulae=""
+          casks=""
+          install_formulae=""
+          install_casks=""
+          for file in $files; do
+            token=$(basename "$file" .rb)
+            case "$file" in
+              Formula/*) formulae="$formulae $token" ;;
+              Casks/*) casks="$casks $token" ;;
+            esac
+            # Added lines count too: a new entry always carries url/sha256/version.
+            metadata=$(git diff -U0 "$base...HEAD" -- "$file" |
+              grep -cE '^[+-][^+-].*(url|sha256|version|tag|revision|branch)' || true)
+            if [ "$metadata" -gt 0 ]; then
+              case "$file" in
+                Formula/*) install_formulae="$install_formulae $token" ;;
+                Casks/*) install_casks="$install_casks $token" ;;
+              esac
+            fi
+          done
+          {
+            echo "formulae=${formulae# }"
+            echo "casks=${casks# }"
+            echo "install_formulae=${install_formulae# }"
+            echo "install_casks=${install_casks# }"
+          } >> "$GITHUB_OUTPUT"
 
       # Blocking: proves the URL of every changed entry resolves and that its
       # sha256 still matches the uploaded artifact, which is what bump PRs break.
@@ -109,10 +126,14 @@ jobs:
       # the formula's own smoke test; casks have none.
       - name: Install and test
         env:
-          FORMULAE: ${{ steps.changed.outputs.formulae }}
-          CASKS: ${{ steps.changed.outputs.casks }}
+          FORMULAE: ${{ steps.changed.outputs.install_formulae }}
+          CASKS: ${{ steps.changed.outputs.install_casks }}
         run: |
           set -euo pipefail
+          if [ -z "${FORMULAE}${CASKS}" ]; then
+            echo "No changed entry altered its download metadata; nothing to install."
+            exit 0
+          fi
           # Tokens never contain whitespace; the splits are intended.
           # shellcheck disable=SC2086
           for formula in $FORMULAE; do
@@ -122,24 +143,4 @@ jobs:
           # shellcheck disable=SC2086
           for cask in $CASKS; do
             brew install --cask "brewforge/more/$cask"
-          done
-
-      # Advisory: `brew audit` reports issues this tap knowingly keeps (for
-      # example the explicit `version` in a formula whose per-arch URLs
-      # interpolate it), so it annotates the PR instead of blocking it.
-      - name: Brew audit
-        continue-on-error: true
-        env:
-          FORMULAE: ${{ steps.changed.outputs.formulae }}
-          CASKS: ${{ steps.changed.outputs.casks }}
-        run: |
-          set -euo pipefail
-          # Tokens never contain whitespace; the splits are intended.
-          # shellcheck disable=SC2086
-          for formula in $FORMULAE; do
-            brew audit --formula "brewforge/more/$formula"
-          done
-          # shellcheck disable=SC2086
-          for cask in $CASKS; do
-            brew audit --cask "brewforge/more/$cask"
           done
