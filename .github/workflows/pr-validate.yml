@@ -1,0 +1,125 @@
+name: pr-validate
+
+on:
+  pull_request:
+    paths:
+      - "Casks/**"
+      - "Formula/**"
+      - ".github/workflows/pr-validate.yml"
+  workflow_dispatch:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref_name }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+env:
+  HOMEBREW_DEVELOPER: 1
+  HOMEBREW_NO_AUTO_UPDATE: 1
+  HOMEBREW_NO_ENV_HINTS: 1
+  HOMEBREW_NO_INSTALL_CLEANUP: 1
+
+jobs:
+  validate:
+    name: Validate
+    runs-on: macos-latest
+    steps:
+      - name: Check out
+        uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+
+      - name: Set up Homebrew
+        uses: Homebrew/actions/setup-homebrew@main
+        with:
+          core: false
+          cask: false
+
+      # `brew style` takes paths, `brew fetch`/`brew audit` take tap-qualified
+      # names, so both shapes are collected from the same diff against the PR base.
+      - name: Detect changed formulae and casks
+        id: changed
+        run: |
+          set -euo pipefail
+          base="origin/${GITHUB_BASE_REF:-main}"
+          files=$(git diff --name-only --diff-filter=ACMR "$base...HEAD" -- Casks Formula | sort -u)
+          formulae=$(printf '%s\n' "$files" | sed -n 's|^Formula/\([^/]*\)\.rb$|\1|p')
+          casks=$(printf '%s\n' "$files" | sed -n 's|^Casks/\([^/]*\)\.rb$|\1|p')
+          echo "Changed files:"
+          printf '%s\n' "$files"
+          {
+            echo "files<<FILES_EOF"
+            printf '%s\n' "$files"
+            echo "FILES_EOF"
+            echo "formulae<<FORMULAE_EOF"
+            printf '%s\n' "$formulae"
+            echo "FORMULAE_EOF"
+            echo "casks<<CASKS_EOF"
+            printf '%s\n' "$casks"
+            echo "CASKS_EOF"
+          } >> "$GITHUB_OUTPUT"
+
+      - name: Brew style
+        env:
+          FILES: ${{ steps.changed.outputs.files }}
+        run: |
+          set -euo pipefail
+          if [ -z "${FILES//$'\n'/}" ]; then
+            echo "No formula or cask files changed."
+            exit 0
+          fi
+          # Paths never contain whitespace; the split is intended.
+          # shellcheck disable=SC2086
+          brew style $FILES
+
+      # The tap has to be loadable by name for `brew fetch` and `brew audit`.
+      - name: Tap this checkout
+        run: |
+          set -euo pipefail
+          tap="$(brew --repository)/Library/Taps/brewforge/homebrew-more"
+          rm -rf "$tap"
+          mkdir -p "$(dirname "$tap")"
+          rsync -a --exclude=.git ./ "$tap/"
+          # Homebrew 7 refuses to load formulae and casks from an untrusted tap.
+          brew trust brewforge/more || true
+
+      # Blocking: proves the URL of every changed entry resolves and that its
+      # sha256 still matches the uploaded artifact, which is what bump PRs break.
+      # Only the runner's own architecture is verified (macos-latest = arm64).
+      - name: Verify downloads
+        env:
+          FORMULAE: ${{ steps.changed.outputs.formulae }}
+          CASKS: ${{ steps.changed.outputs.casks }}
+        run: |
+          set -euo pipefail
+          # Tokens never contain whitespace; the splits are intended.
+          # shellcheck disable=SC2086
+          for formula in $FORMULAE; do
+            brew fetch --formula --retry "brewforge/more/$formula"
+          done
+          # shellcheck disable=SC2086
+          for cask in $CASKS; do
+            brew fetch --cask --retry "brewforge/more/$cask"
+          done
+
+      # Advisory: `brew audit` reports issues this tap knowingly keeps (for
+      # example the explicit `version` in a formula whose per-arch URLs
+      # interpolate it), so it annotates the PR instead of blocking it.
+      - name: Brew audit
+        continue-on-error: true
+        env:
+          FORMULAE: ${{ steps.changed.outputs.formulae }}
+          CASKS: ${{ steps.changed.outputs.casks }}
+        run: |
+          set -euo pipefail
+          # Tokens never contain whitespace; the splits are intended.
+          # shellcheck disable=SC2086
+          for formula in $FORMULAE; do
+            brew audit --formula "brewforge/more/$formula"
+          done
+          # shellcheck disable=SC2086
+          for cask in $CASKS; do
+            brew audit --cask "brewforge/more/$cask"
+          done
