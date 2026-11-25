@@ -18,6 +18,5 @@ cask "hunming" do
     strategy :github_latest
   end
 
-
   binary "hunming"
 end

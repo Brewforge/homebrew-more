@@ -18,6 +18,5 @@ cask "kungfig" do
     strategy :github_latest
   end
 
-
   binary "kungfig"
 end

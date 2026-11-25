@@ -30,6 +30,5 @@ cask "bbdown" do
     end
   end
 
-
   binary "bbdown"
 end

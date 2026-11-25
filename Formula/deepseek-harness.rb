@@ -49,10 +49,16 @@ class DeepseekHarness < Formula
     JAVASCRIPT
     assert_match "dsh-pty-ok", shell_output("#{formula_opt_bin("node")}/node pty-test.cjs")
 
+    # Hoisted out of the heredoc: interpolating the call chain trips
+    # `Homebrew/SimpleInterpolation`.
+    node_modules = node_pty.parent
+    koffi = (node_modules/"koffi").to_s.dump
+    sharp = (node_modules/"sharp").to_s.dump
+    addon_builtin = (node_modules/"node-addon-require-builtin").to_s.dump
     (testpath/"native-modules-test.cjs").write <<~JAVASCRIPT
-      require(#{(node_pty.parent/"koffi").to_s.dump});
-      require(#{(node_pty.parent/"sharp").to_s.dump});
-      require(#{(node_pty.parent/"node-addon-require-builtin").to_s.dump});
+      require(#{koffi});
+      require(#{sharp});
+      require(#{addon_builtin});
     JAVASCRIPT
     system formula_opt_bin("node")/"node", "native-modules-test.cjs"
 
